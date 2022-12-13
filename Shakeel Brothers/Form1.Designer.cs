@@ -252,10 +252,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(50, 108);
+            this.textBox2.Location = new System.Drawing.Point(53, 109);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(86, 20);
+            this.textBox2.Size = new System.Drawing.Size(67, 20);
             this.textBox2.TabIndex = 5;
             // 
             // BillByDate
