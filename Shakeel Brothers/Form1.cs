@@ -66,5 +66,50 @@ namespace Shakeel_Brothers
         {
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void users_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void City_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CusPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Payments_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DelEntryView_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DelEntry_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OldRate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
