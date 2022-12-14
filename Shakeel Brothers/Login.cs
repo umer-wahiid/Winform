@@ -42,6 +42,26 @@ namespace Shakeel_Brothers
                 s.Show();
                 this.Hide();
             }
+            else
+            {
+                MessageBox.Show("Wrong Password");
+            }
+            c.con.Close();
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            bool check = checkBox1.Checked;
+
+            switch (check)
+            {
+                case true:
+                    textBox2.UseSystemPasswordChar = false;
+                    break;
+                default:
+                    textBox2.UseSystemPasswordChar = true;
+                    break;
+            }
         }
     }
 }
