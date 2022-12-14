@@ -20,3 +20,4 @@ D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.Gener
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.CoreCompileInputs.cache
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.exe
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.pdb
+C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Login.resources
