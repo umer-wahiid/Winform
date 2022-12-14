@@ -50,17 +50,25 @@
             this.DoO = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.EditPurBill = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Transactions = new System.Windows.Forms.Button();
+            this.TrailBalance = new System.Windows.Forms.Button();
+            this.LedgerBtwDates = new System.Windows.Forms.Button();
+            this.CusLedger = new System.Windows.Forms.Button();
+            this.PayByCus = new System.Windows.Forms.Button();
+            this.CustomerDropdown = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Manage
             // 
             this.Manage.BackColor = System.Drawing.Color.White;
             this.Manage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Manage.Location = new System.Drawing.Point(29, 35);
-            this.Manage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Manage.Location = new System.Drawing.Point(41, 43);
+            this.Manage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Manage.Name = "Manage";
-            this.Manage.Size = new System.Drawing.Size(80, 30);
+            this.Manage.Size = new System.Drawing.Size(107, 37);
             this.Manage.TabIndex = 0;
             this.Manage.Text = "Manage";
             this.Manage.UseVisualStyleBackColor = false;
@@ -68,10 +76,10 @@
             // users
             // 
             this.users.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.users.Location = new System.Drawing.Point(29, 82);
-            this.users.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.users.Location = new System.Drawing.Point(38, 100);
+            this.users.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.users.Name = "users";
-            this.users.Size = new System.Drawing.Size(74, 26);
+            this.users.Size = new System.Drawing.Size(112, 36);
             this.users.TabIndex = 1;
             this.users.Text = "users";
             this.users.UseVisualStyleBackColor = true;
@@ -79,10 +87,10 @@
             // Transport
             // 
             this.Transport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Transport.Location = new System.Drawing.Point(29, 113);
-            this.Transport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Transport.Location = new System.Drawing.Point(38, 141);
+            this.Transport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Transport.Name = "Transport";
-            this.Transport.Size = new System.Drawing.Size(74, 27);
+            this.Transport.Size = new System.Drawing.Size(112, 36);
             this.Transport.TabIndex = 2;
             this.Transport.Text = "Transport";
             this.Transport.UseVisualStyleBackColor = true;
@@ -90,10 +98,10 @@
             // Item
             // 
             this.Item.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Item.Location = new System.Drawing.Point(29, 145);
-            this.Item.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Item.Location = new System.Drawing.Point(39, 182);
+            this.Item.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Item.Name = "Item";
-            this.Item.Size = new System.Drawing.Size(74, 25);
+            this.Item.Size = new System.Drawing.Size(112, 36);
             this.Item.TabIndex = 3;
             this.Item.Text = "Item";
             this.Item.UseVisualStyleBackColor = true;
@@ -101,32 +109,34 @@
             // Customer
             // 
             this.Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Customer.Location = new System.Drawing.Point(29, 175);
-            this.Customer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Customer.Location = new System.Drawing.Point(39, 223);
+            this.Customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Customer.Name = "Customer";
-            this.Customer.Size = new System.Drawing.Size(74, 27);
+            this.Customer.Size = new System.Drawing.Size(112, 36);
             this.Customer.TabIndex = 4;
             this.Customer.Text = "Customer";
             this.Customer.UseVisualStyleBackColor = true;
+            this.Customer.Click += new System.EventHandler(this.Customer_Click);
             // 
             // Area
             // 
             this.Area.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Area.Location = new System.Drawing.Point(29, 206);
-            this.Area.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Area.Location = new System.Drawing.Point(38, 264);
+            this.Area.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Area.Name = "Area";
-            this.Area.Size = new System.Drawing.Size(74, 24);
+            this.Area.Size = new System.Drawing.Size(112, 36);
             this.Area.TabIndex = 5;
             this.Area.Text = "Area";
             this.Area.UseVisualStyleBackColor = true;
+            this.Area.Click += new System.EventHandler(this.Area_Click);
             // 
             // City
             // 
             this.City.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.City.Location = new System.Drawing.Point(30, 236);
-            this.City.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.City.Location = new System.Drawing.Point(38, 305);
+            this.City.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.City.Name = "City";
-            this.City.Size = new System.Drawing.Size(74, 24);
+            this.City.Size = new System.Drawing.Size(112, 36);
             this.City.TabIndex = 6;
             this.City.Text = "City";
             this.City.UseVisualStyleBackColor = true;
@@ -134,10 +144,10 @@
             // CusPrint
             // 
             this.CusPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CusPrint.Location = new System.Drawing.Point(29, 264);
-            this.CusPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CusPrint.Location = new System.Drawing.Point(39, 346);
+            this.CusPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CusPrint.Name = "CusPrint";
-            this.CusPrint.Size = new System.Drawing.Size(74, 67);
+            this.CusPrint.Size = new System.Drawing.Size(112, 82);
             this.CusPrint.TabIndex = 7;
             this.CusPrint.Text = "Customer Print";
             this.CusPrint.UseVisualStyleBackColor = true;
@@ -145,10 +155,10 @@
             // CreateBill
             // 
             this.CreateBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CreateBill.Location = new System.Drawing.Point(122, 63);
-            this.CreateBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CreateBill.Location = new System.Drawing.Point(172, 78);
+            this.CreateBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateBill.Name = "CreateBill";
-            this.CreateBill.Size = new System.Drawing.Size(107, 119);
+            this.CreateBill.Size = new System.Drawing.Size(143, 146);
             this.CreateBill.TabIndex = 8;
             this.CreateBill.Text = "Create Bill";
             this.CreateBill.UseVisualStyleBackColor = true;
@@ -156,10 +166,10 @@
             // Payments
             // 
             this.Payments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Payments.Location = new System.Drawing.Point(122, 199);
-            this.Payments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Payments.Location = new System.Drawing.Point(172, 245);
+            this.Payments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Payments.Name = "Payments";
-            this.Payments.Size = new System.Drawing.Size(107, 60);
+            this.Payments.Size = new System.Drawing.Size(143, 74);
             this.Payments.TabIndex = 9;
             this.Payments.Text = "Payments";
             this.Payments.UseVisualStyleBackColor = true;
@@ -167,10 +177,10 @@
             // DelEntryView
             // 
             this.DelEntryView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.DelEntryView.Location = new System.Drawing.Point(125, 272);
-            this.DelEntryView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DelEntryView.Location = new System.Drawing.Point(176, 335);
+            this.DelEntryView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DelEntryView.Name = "DelEntryView";
-            this.DelEntryView.Size = new System.Drawing.Size(100, 24);
+            this.DelEntryView.Size = new System.Drawing.Size(133, 30);
             this.DelEntryView.TabIndex = 10;
             this.DelEntryView.Text = "Delete Entry View";
             this.DelEntryView.UseVisualStyleBackColor = true;
@@ -178,10 +188,10 @@
             // DelEntry
             // 
             this.DelEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DelEntry.Location = new System.Drawing.Point(138, 306);
-            this.DelEntry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DelEntry.Location = new System.Drawing.Point(192, 377);
+            this.DelEntry.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DelEntry.Name = "DelEntry";
-            this.DelEntry.Size = new System.Drawing.Size(74, 24);
+            this.DelEntry.Size = new System.Drawing.Size(99, 30);
             this.DelEntry.TabIndex = 11;
             this.DelEntry.Text = "Delete Entry";
             this.DelEntry.UseVisualStyleBackColor = true;
@@ -189,10 +199,10 @@
             // OldRate
             // 
             this.OldRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OldRate.Location = new System.Drawing.Point(138, 336);
-            this.OldRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OldRate.Location = new System.Drawing.Point(192, 419);
+            this.OldRate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OldRate.Name = "OldRate";
-            this.OldRate.Size = new System.Drawing.Size(74, 24);
+            this.OldRate.Size = new System.Drawing.Size(99, 30);
             this.OldRate.TabIndex = 12;
             this.OldRate.Text = "Old Rates";
             this.OldRate.UseVisualStyleBackColor = true;
@@ -207,21 +217,21 @@
             this.groupBox1.Controls.Add(this.DoO);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.EditPurBill);
-            this.groupBox1.Location = new System.Drawing.Point(247, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(345, 11);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(150, 249);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(236, 331);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
             // BillByCust
             // 
             this.BillByCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BillByCust.Location = new System.Drawing.Point(28, 176);
-            this.BillByCust.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BillByCust.Location = new System.Drawing.Point(55, 237);
+            this.BillByCust.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BillByCust.Name = "BillByCust";
-            this.BillByCust.Size = new System.Drawing.Size(89, 58);
+            this.BillByCust.Size = new System.Drawing.Size(119, 71);
             this.BillByCust.TabIndex = 8;
             this.BillByCust.Text = "Bill By Customer";
             this.BillByCust.UseVisualStyleBackColor = true;
@@ -230,10 +240,10 @@
             // BillByNo
             // 
             this.BillByNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BillByNo.Location = new System.Drawing.Point(28, 135);
-            this.BillByNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BillByNo.Location = new System.Drawing.Point(55, 190);
+            this.BillByNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BillByNo.Name = "BillByNo";
-            this.BillByNo.Size = new System.Drawing.Size(89, 26);
+            this.BillByNo.Size = new System.Drawing.Size(119, 32);
             this.BillByNo.TabIndex = 7;
             this.BillByNo.Text = "Bill By OR.No";
             this.BillByNo.UseVisualStyleBackColor = true;
@@ -243,28 +253,29 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(220)))), ((int)(((byte)(180)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(5, 110);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(24, 151);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Or.No";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(53, 109);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Location = new System.Drawing.Point(92, 151);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(67, 20);
+            this.textBox2.Size = new System.Drawing.Size(113, 22);
             this.textBox2.TabIndex = 5;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // BillByDate
             // 
             this.BillByDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BillByDate.Location = new System.Drawing.Point(28, 72);
-            this.BillByDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BillByDate.Location = new System.Drawing.Point(55, 104);
+            this.BillByDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BillByDate.Name = "BillByDate";
-            this.BillByDate.Size = new System.Drawing.Size(89, 26);
+            this.BillByDate.Size = new System.Drawing.Size(119, 32);
             this.BillByDate.TabIndex = 4;
             this.BillByDate.Text = "Bill By Date";
             this.BillByDate.UseVisualStyleBackColor = true;
@@ -275,38 +286,121 @@
             this.DoO.AutoSize = true;
             this.DoO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(220)))), ((int)(((byte)(180)))));
             this.DoO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.DoO.Location = new System.Drawing.Point(12, 48);
-            this.DoO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DoO.Location = new System.Drawing.Point(33, 72);
             this.DoO.Name = "DoO";
-            this.DoO.Size = new System.Drawing.Size(37, 17);
+            this.DoO.Size = new System.Drawing.Size(44, 20);
             this.DoO.TabIndex = 3;
             this.DoO.Text = "DoO";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(50, 46);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(92, 72);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(86, 20);
+            this.textBox1.Size = new System.Drawing.Size(113, 22);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // EditPurBill
             // 
             this.EditPurBill.BackColor = System.Drawing.Color.White;
             this.EditPurBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditPurBill.Location = new System.Drawing.Point(14, 17);
-            this.EditPurBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EditPurBill.Location = new System.Drawing.Point(19, 21);
+            this.EditPurBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EditPurBill.Name = "EditPurBill";
-            this.EditPurBill.Size = new System.Drawing.Size(121, 24);
+            this.EditPurBill.Size = new System.Drawing.Size(198, 42);
             this.EditPurBill.TabIndex = 1;
             this.EditPurBill.Text = "Edit Purchase Bill";
             this.EditPurBill.UseVisualStyleBackColor = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.CustomerDropdown);
+            this.groupBox2.Controls.Add(this.PayByCus);
+            this.groupBox2.Controls.Add(this.CusLedger);
+            this.groupBox2.Controls.Add(this.LedgerBtwDates);
+            this.groupBox2.Controls.Add(this.TrailBalance);
+            this.groupBox2.Controls.Add(this.Transactions);
+            this.groupBox2.Location = new System.Drawing.Point(617, 11);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(385, 342);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // Transactions
+            // 
+            this.Transactions.BackColor = System.Drawing.Color.White;
+            this.Transactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Transactions.Location = new System.Drawing.Point(89, 21);
+            this.Transactions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Transactions.Name = "Transactions";
+            this.Transactions.Size = new System.Drawing.Size(198, 42);
+            this.Transactions.TabIndex = 2;
+            this.Transactions.Text = "Transactions";
+            this.Transactions.UseVisualStyleBackColor = false;
+            // 
+            // TrailBalance
+            // 
+            this.TrailBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrailBalance.Location = new System.Drawing.Point(79, 79);
+            this.TrailBalance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TrailBalance.Name = "TrailBalance";
+            this.TrailBalance.Size = new System.Drawing.Size(218, 41);
+            this.TrailBalance.TabIndex = 5;
+            this.TrailBalance.Text = "Trail Balance";
+            this.TrailBalance.UseVisualStyleBackColor = true;
+            // 
+            // LedgerBtwDates
+            // 
+            this.LedgerBtwDates.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LedgerBtwDates.Location = new System.Drawing.Point(163, 138);
+            this.LedgerBtwDates.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LedgerBtwDates.Name = "LedgerBtwDates";
+            this.LedgerBtwDates.Size = new System.Drawing.Size(216, 41);
+            this.LedgerBtwDates.TabIndex = 6;
+            this.LedgerBtwDates.Text = "Ledger B/W Dates";
+            this.LedgerBtwDates.UseVisualStyleBackColor = true;
+            // 
+            // CusLedger
+            // 
+            this.CusLedger.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CusLedger.Location = new System.Drawing.Point(6, 138);
+            this.CusLedger.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CusLedger.Name = "CusLedger";
+            this.CusLedger.Size = new System.Drawing.Size(147, 41);
+            this.CusLedger.TabIndex = 7;
+            this.CusLedger.Text = "Customer\'s Ledger";
+            this.CusLedger.UseVisualStyleBackColor = true;
+            // 
+            // PayByCus
+            // 
+            this.PayByCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PayByCus.Location = new System.Drawing.Point(63, 193);
+            this.PayByCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PayByCus.Name = "PayByCus";
+            this.PayByCus.Size = new System.Drawing.Size(265, 46);
+            this.PayByCus.TabIndex = 8;
+            this.PayByCus.Text = "Payment Details By Customer/Date";
+            this.PayByCus.UseVisualStyleBackColor = true;
+            // 
+            // CustomerDropdown
+            // 
+            this.CustomerDropdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerDropdown.FormattingEnabled = true;
+            this.CustomerDropdown.IntegralHeight = false;
+            this.CustomerDropdown.ItemHeight = 22;
+            this.CustomerDropdown.Location = new System.Drawing.Point(63, 261);
+            this.CustomerDropdown.Name = "CustomerDropdown";
+            this.CustomerDropdown.Size = new System.Drawing.Size(265, 30);
+            this.CustomerDropdown.TabIndex = 9;
+            // 
             // Startup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1767, 750);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.OldRate);
             this.Controls.Add(this.DelEntry);
@@ -321,13 +415,14 @@
             this.Controls.Add(this.Transport);
             this.Controls.Add(this.users);
             this.Controls.Add(this.Manage);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Startup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Startup";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -356,6 +451,13 @@
         private System.Windows.Forms.Button BillByNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button CusLedger;
+        private System.Windows.Forms.Button LedgerBtwDates;
+        private System.Windows.Forms.Button TrailBalance;
+        private System.Windows.Forms.Button Transactions;
+        private System.Windows.Forms.Button PayByCus;
+        private System.Windows.Forms.ComboBox CustomerDropdown;
     }
 }
 

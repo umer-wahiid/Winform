@@ -9,3 +9,14 @@ C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.CoreC
 C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.exe
 C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.pdb
 C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Startup.resources
+D:\xampp\htdocs\Winform\Shakeel Brothers\bin\Debug\Shakeel Brothers.exe.config
+D:\xampp\htdocs\Winform\Shakeel Brothers\bin\Debug\Shakeel Brothers.exe
+D:\xampp\htdocs\Winform\Shakeel Brothers\bin\Debug\Shakeel Brothers.pdb
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.AssemblyReference.cache
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.SuggestedBindingRedirects.cache
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Startup.resources
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Properties.Resources.resources
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.GenerateResource.cache
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.CoreCompileInputs.cache
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.exe
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.pdb
