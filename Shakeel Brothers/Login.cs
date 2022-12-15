@@ -38,9 +38,19 @@ namespace Shakeel_Brothers
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
-                Startup s = new Startup();
-                s.Show();
-                this.Hide();
+                while (dr.Read())
+                {
+                    if (dr["Role"].ToString() == "admin")
+                    {
+                        Startup s = new Startup();
+                        s.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
             }
             else
             {

@@ -22,3 +22,4 @@ D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.exe
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.pdb
 C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Login.resources
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Login.resources
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Cashier.resources

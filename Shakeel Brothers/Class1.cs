@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Shakeel_Brothers
 {
@@ -16,5 +17,23 @@ namespace Shakeel_Brothers
             con = new SqlConnection("Data Source=DESKTOP-76GEPIK; user id=sa;password=a123456;Initial Catalog=shakeel_brothers");
         }
 
+        public void IUD(SqlCommand c)
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            c.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public DataTable GetData(string q)
+        {
+            SqlDataAdapter da=new SqlDataAdapter(q,con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
