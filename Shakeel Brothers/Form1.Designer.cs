@@ -122,6 +122,7 @@
             this.Transport.TabIndex = 2;
             this.Transport.Text = "Transport";
             this.Transport.UseVisualStyleBackColor = true;
+            this.Transport.Click += new System.EventHandler(this.Transport_Click);
             // 
             // Item
             // 

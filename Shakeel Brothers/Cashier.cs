@@ -18,7 +18,7 @@ namespace Shakeel_Brothers
         SqlDataAdapter adap;
         DataTable dt;
 
-        Class1 c = new Class1();
+        //Class1 c = new Class1();
 
         public Cashier()
         {
@@ -36,16 +36,16 @@ namespace Shakeel_Brothers
             dataGridView1.DataSource=dt;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void update_Click(object sender, EventArgs e)
         {
             SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
             adap.Update(dt);
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
