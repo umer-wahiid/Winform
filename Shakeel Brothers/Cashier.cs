@@ -14,10 +14,9 @@ namespace Shakeel_Brothers
 
     public partial class Cashier : Form
     {
-        SqlConnection con;
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-76GEPIK; user id=sa;password=a123456;Initial Catalog=shakeel_brothers");
         SqlDataAdapter adap;
-        DataSet ds;
-        SqlCommandBuilder cmbdl;
+        DataTable dt;
 
         Class1 c = new Class1();
 
@@ -31,14 +30,10 @@ namespace Shakeel_Brothers
             //string q1 = "select Cashier as 'User',Password ,Role  from tblCashier";
             //dataGridView1.DataSource = c.GetData(q1);
 
-            con = new SqlConnection();
-            con.ConnectionString = @"Data Source=DESKTOP-76GEPIK; user id=sa;password=a123456;Initial Catalog=shakeel_brothers";
-            con.Open();
-            adap = new SqlDataAdapter("select Cashier as 'User',Password ,Role  from tblCashier",con);
-            ds = new System.Data.DataSet();
-            adap.Fill(ds, "Person_Details");
-            dataGridView1.DataSource=ds.Tables[0];
-
+            adap = new SqlDataAdapter("select ID ,Cashier as 'User',Password ,Role  from tblCashier",con);
+            dt = new DataTable();
+            adap.Fill(dt);
+            dataGridView1.DataSource=dt;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,10 +43,9 @@ namespace Shakeel_Brothers
 
         private void update_Click(object sender, EventArgs e)
         {
-
-            cmbdl = new SqlCommandBuilder(adap);
-            adap.Update(ds, "Person_Details");
-
+            SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
+            adap.Update(dt);
+            this.Close();
         }
     }
 }
