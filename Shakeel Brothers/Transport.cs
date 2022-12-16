@@ -13,7 +13,7 @@ namespace Shakeel_Brothers
 {
     public partial class Transport : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-76GEPIK; user id=sa;password=a123456;Initial Catalog=shakeel_brothers");
+        SqlConnection con = new SqlConnection("Data Source=IMRAN; user id=sa;password=a123456;Initial Catalog=shakeel_brothers");
         SqlDataAdapter adap;
         DataTable dt;
         public Transport()

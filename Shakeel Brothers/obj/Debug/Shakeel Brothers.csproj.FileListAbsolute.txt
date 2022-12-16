@@ -24,3 +24,5 @@ C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Login.resour
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Login.resources
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Cashier.resources
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Transport.resources
+C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Cashier.resources
+C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Transport.resources
