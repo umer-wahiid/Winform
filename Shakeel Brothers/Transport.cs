@@ -13,7 +13,8 @@ namespace Shakeel_Brothers
 {
     public partial class Transport : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-76GEPIK; user id=sa;password=a123456;Initial Catalog=shakeel_brothers");
+        Class1 c = new Class1();
+
         SqlDataAdapter adap;
         DataTable dt;
         public Transport()
@@ -25,6 +26,13 @@ namespace Shakeel_Brothers
         {
 
         }
+        private void Transport_Load(object sender, EventArgs e)
+        {
+            adap = new SqlDataAdapter("select ID ,Transport,UTransport as 'اردو',TportPh as 'Phone No.'  from tblTransport", c.con);
+            dt = new DataTable();
+            adap.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -33,12 +41,5 @@ namespace Shakeel_Brothers
             this.Close();
         }
 
-        private void Transport_Load(object sender, EventArgs e)
-        {
-            adap = new SqlDataAdapter("select ID ,Transport,UTransport as 'اردو',TportPh as 'Phone No.'  from tblTransport", con);
-            dt = new DataTable();
-            adap.Fill(dt);
-            dataGridView1.DataSource = dt;
-        }
     }
 }

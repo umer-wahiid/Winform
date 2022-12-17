@@ -140,5 +140,11 @@ namespace Shakeel_Brothers
             Transport t = new Transport();
             t.Show();
         }
+
+        private void Item_Click(object sender, EventArgs e)
+        {
+            Item t = new Item();
+            t.Show();
+        }
     }
 }

@@ -134,6 +134,7 @@
             this.Item.TabIndex = 3;
             this.Item.Text = "Item";
             this.Item.UseVisualStyleBackColor = true;
+            this.Item.Click += new System.EventHandler(this.Item_Click);
             // 
             // Customer
             // 

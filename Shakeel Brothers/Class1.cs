@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Shakeel_Brothers
 {
@@ -16,7 +17,6 @@ namespace Shakeel_Brothers
         {
             con = new SqlConnection("Data Source=DESKTOP-76GEPIK; user id=sa;password=a123456;Initial Catalog=shakeel_brothers");
             //con = new SqlConnection("Data Source=IMRAN; user id=sa;password=a123456;Initial Catalog=shakeel_brothers");
-
         }
 
         public void IUD(SqlCommand c)
@@ -36,6 +36,58 @@ namespace Shakeel_Brothers
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
+        }
+
+        //public DataTable Update(string u)
+        //{
+        //    SqlDataAdapter adap = new SqlDataAdapter(u,con);
+        //    DataTable Dt = new DataTable();
+        //    adap.Fill(Dt);
+        //    return Dt;
+
+        //    SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
+        //    adap.Update(Dt);
+        //}
+
+        public void Update(string q)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(q, con);
+            SqlCommandBuilder cmbdl = new SqlCommandBuilder(da);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            da.Update(dt);
+            return;
+        }
+
+
+        public void check()
+        {
+            SqlCommand cmd = new SqlCommand("Select * from tblCashier where Cashier=@c and Password=@p", c.con);
+            cmd.Parameters.AddWithValue("@c", textBox1.Text);
+            cmd.Parameters.AddWithValue("@p", textBox2.Text);
+            c.con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    if (dr["Role"].ToString() == "admin")
+                    {
+                        Startup s = new Startup();
+                        s.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wrong Password");
+            }
+            c.con.Close();
         }
     }
 }
