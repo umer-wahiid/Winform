@@ -82,7 +82,8 @@ namespace Shakeel_Brothers
 
         private void City_Click(object sender, EventArgs e)
         {
-
+            City c = new City();
+            c.Show();
         }
 
         private void CusPrint_Click(object sender, EventArgs e)
