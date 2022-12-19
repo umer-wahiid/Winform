@@ -38,16 +38,6 @@ namespace Shakeel_Brothers
             return dt;
         }
 
-        //public DataTable Update(string u)
-        //{
-        //    SqlDataAdapter adap = new SqlDataAdapter(u,con);
-        //    DataTable Dt = new DataTable();
-        //    adap.Fill(Dt);
-        //    return Dt;
-
-        //    SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
-        //    adap.Update(Dt);
-        //}
 
         public void Update(string q)
         {

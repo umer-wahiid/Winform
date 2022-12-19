@@ -65,7 +65,8 @@ namespace Shakeel_Brothers
 
         private void Area_Click(object sender, EventArgs e)
         {
-
+            Area a = new Area();
+            a.Show();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
