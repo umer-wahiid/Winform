@@ -27,3 +27,5 @@ D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Transport.re
 C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Cashier.resources
 C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Transport.resources
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Item.resources
+C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Item.resources
+C:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.City.resources

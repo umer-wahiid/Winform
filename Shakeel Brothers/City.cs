@@ -2,41 +2,34 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Shakeel_Brothers
 {
-
-    public partial class Cashier : Form
+    public partial class City : Form
     {
         SqlDataAdapter adap;
         DataTable dt;
 
         Class1 c = new Class1();
-
-        public Cashier()
+        public City()
         {
             InitializeComponent();
         }
 
-        private void Cashier_Load(object sender, EventArgs e)
+        private void City_Load(object sender, EventArgs e)
         {
-            //string q1 = "select Cashier as 'User',Password ,Role  from tblCashier";
-            //dataGridView1.DataSource = c.GetData(q1);
-
-            adap = new SqlDataAdapter("select ID ,Cashier as 'User',Password ,Role  from tblCashier", c.con);
+            adap = new SqlDataAdapter("select Id , City as City , Ucity as Ucity , Country as Country from tblcity", c.con);
             dt = new DataTable();
             adap.Fill(dt);
             dataGridView1.DataSource = dt;
-
         }
-
-        private void update_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
             adap.Update(dt);
@@ -48,9 +41,5 @@ namespace Shakeel_Brothers
 
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
