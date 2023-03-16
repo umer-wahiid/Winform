@@ -1,0 +1,104 @@
+CREATE DATABASE shakeel_brothers
+USE [shakeel_brothers]
+
+CREATE TABLE [tblCity](
+	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[City] [varchar] (25) Not NULL,
+	[UCity] [varchar] (30) NOT NULL,
+	[Country] [varchar] (30) NOT NULL,
+)
+
+CREATE TABLE [tblArea](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Area] [varchar] (35) NOT NULL,
+	[UArea] [varchar] (30) NOT NULL,
+	[City] int FOREIGN KEY REFERENCES tblCity(ID),
+	[UCity] [varchar] (30) NOT NULL,
+)
+
+CREATE TABLE [tblSupplier](
+	[Id] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[Supplier] [varchar] (25) Not NULL,
+	[USupplier] [varchar] (30) NOT NULL,
+	[ContactPerson] [varchar] (30) NULL,
+	[Address] [varchar] (30) NULL,
+	[Ph] [varchar] (30) NULL,
+	[Fax] [varchar] (30) NULL,
+	[Email] [varchar] (40) NULL,
+	[City] int FOREIGN KEY REFERENCES tblCity(ID),
+	[Limit] [int] NULL,
+)
+
+CREATE TABLE [tblTransactions](
+	[TID] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[TDate] [Date] Not NULL,
+	[TTime] [Time] NULL,
+	[BillNum] [varchar] (30) NULL,
+	[Supplier] int FOREIGN KEY REFERENCES tblSupplier(Id),
+	[Debit] int Null,
+	[Select] [varchar] (30) NULL,
+	[Description] [varchar] (50) NULL,
+)
+
+
+CREATE TABLE [tblRawMaterial](
+	[Id] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[RawName] [varchar] (40) NULL,
+	[URawName] [varchar] (40) NULL,
+	[Packing] [varchar] (25)  NULL,
+	[UPacking] [varchar] (25) NULL,
+	[PQty] [int]  NULL,
+	[Measure] [varchar] (25)  NULL,
+	[PRate] [int] Null,
+)
+
+
+
+CREATE TABLE [tblTransport](
+	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[Transport] [varchar] (30) Not Null,
+	[UTransport] [varchar] (30) Not Null,
+	[Tport Ph] [varchar] (15) Null,
+)
+
+
+
+CREATE TABLE [tblTransDetails](
+	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[TID] int FOREIGN KEY REFERENCES tbltransactions(TID),
+	[DDate] [Date] Not NULL,
+	[DTime] [Time] NULL,
+	[RawMaterial] int FOREIGN KEY REFERENCES tblRawMaterial(Id),
+	[Qty] [int] Null,
+	[Rate] [int]  Null,
+	[Nag] [int]  Null,
+	[Bilty] [varchar] (25)  Null,
+	[Transport] int FOREIGN KEY REFERENCES tblTransport(ID),
+	[Labour] [int]  Null,
+	[Bardan] [int]  Null,
+	[User] [varchar] (30) Null,
+)
+
+
+
+CREATE TABLE [tblCashier](
+	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[Cashier] [varchar] (30)  Not Null,
+	[Password] [varchar] (30)  Not Null,
+	[Role] [varchar] (30)  Not Null,
+)
+
+
+CREATE TABLE [tblPacking](
+	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[Packing] [varchar] (30)  Not Null,
+)
+
+
+CREATE TABLE [tblReceiver](
+	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[Receiver] [varchar] (30)  Not Null,
+)
+
+
+
