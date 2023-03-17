@@ -90,7 +90,6 @@
             this.txtSearch.Location = new System.Drawing.Point(271, 29);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.ReadOnly = true;
             this.txtSearch.Size = new System.Drawing.Size(114, 20);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);

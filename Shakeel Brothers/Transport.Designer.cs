@@ -38,11 +38,11 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtRole = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUtransport = new System.Windows.Forms.TextBox();
             this.fname = new System.Windows.Forms.Label();
-            this.txtCashier = new System.Windows.Forms.TextBox();
+            this.txtTransport = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -82,11 +82,11 @@
             this.panel2.Controls.Add(this.txtId);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.txtRole);
+            this.panel2.Controls.Add(this.txtPhone);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtPassword);
+            this.panel2.Controls.Add(this.txtUtransport);
             this.panel2.Controls.Add(this.fname);
-            this.panel2.Controls.Add(this.txtCashier);
+            this.panel2.Controls.Add(this.txtTransport);
             this.panel2.Controls.Add(this.name);
             this.panel2.Controls.Add(this.btnBack);
             this.panel2.Location = new System.Drawing.Point(0, 315);
@@ -105,15 +105,16 @@
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(271, 29);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.ReadOnly = true;
             this.txtSearch.Size = new System.Drawing.Size(114, 20);
             this.txtSearch.TabIndex = 3;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label2
             // 
@@ -135,6 +136,7 @@
             this.btnDel.TabIndex = 6;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click_1);
             // 
             // txtId
             // 
@@ -148,7 +150,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 99);
+            this.label1.Location = new System.Drawing.Point(40, 99);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
@@ -165,60 +167,61 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // txtRole
+            // txtPhone
             // 
-            this.txtRole.Location = new System.Drawing.Point(62, 70);
-            this.txtRole.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(102, 20);
-            this.txtRole.TabIndex = 2;
+            this.txtPhone.Location = new System.Drawing.Point(62, 70);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(102, 20);
+            this.txtPhone.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 75);
+            this.label4.Location = new System.Drawing.Point(21, 74);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Role";
+            this.label4.Text = "Phone";
             // 
-            // txtPassword
+            // txtUtransport
             // 
-            this.txtPassword.Location = new System.Drawing.Point(62, 46);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(102, 20);
-            this.txtPassword.TabIndex = 1;
+            this.txtUtransport.Location = new System.Drawing.Point(62, 46);
+            this.txtUtransport.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUtransport.Name = "txtUtransport";
+            this.txtUtransport.Size = new System.Drawing.Size(102, 20);
+            this.txtUtransport.TabIndex = 1;
             // 
             // fname
             // 
             this.fname.AutoSize = true;
-            this.fname.Location = new System.Drawing.Point(9, 51);
+            this.fname.Location = new System.Drawing.Point(4, 50);
             this.fname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fname.Name = "fname";
-            this.fname.Size = new System.Drawing.Size(53, 13);
+            this.fname.Size = new System.Drawing.Size(55, 13);
             this.fname.TabIndex = 7;
-            this.fname.Text = "Password";
+            this.fname.Text = "ٹرانسپورٹ";
             // 
-            // txtCashier
+            // txtTransport
             // 
-            this.txtCashier.Location = new System.Drawing.Point(62, 22);
-            this.txtCashier.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCashier.Name = "txtCashier";
-            this.txtCashier.Size = new System.Drawing.Size(102, 20);
-            this.txtCashier.TabIndex = 0;
+            this.txtTransport.Location = new System.Drawing.Point(62, 22);
+            this.txtTransport.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTransport.Name = "txtTransport";
+            this.txtTransport.Size = new System.Drawing.Size(102, 20);
+            this.txtTransport.TabIndex = 0;
             // 
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(20, 27);
+            this.name.Location = new System.Drawing.Point(7, 27);
             this.name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(42, 13);
+            this.name.Size = new System.Drawing.Size(52, 13);
             this.name.TabIndex = 5;
-            this.name.Text = "Casheir";
+            this.name.Text = "Transport";
             // 
             // btnBack
             // 
@@ -230,6 +233,7 @@
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dataGridView1
             // 
@@ -244,6 +248,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(481, 311);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             // 
             // Transport
             // 
@@ -277,11 +282,11 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtRole;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUtransport;
         private System.Windows.Forms.Label fname;
-        private System.Windows.Forms.TextBox txtCashier;
+        private System.Windows.Forms.TextBox txtTransport;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridView dataGridView1;
