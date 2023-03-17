@@ -80,6 +80,7 @@
       <DependentUpon>City.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="DataTransfer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

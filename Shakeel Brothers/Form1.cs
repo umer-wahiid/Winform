@@ -78,7 +78,6 @@ namespace Shakeel_Brothers
         {
             Cashier s = new Cashier();
             s.Show();
-            //this.Hide();
         }
 
         private void City_Click(object sender, EventArgs e)

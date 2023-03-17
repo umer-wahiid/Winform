@@ -15,8 +15,19 @@ namespace Shakeel_Brothers
     {
         Class1 c = new Class1();
 
-        SqlDataAdapter adap;
-        DataTable dt;
+        public void showgrid()
+        {
+            dataGridView1.DataSource = c.GetData("select ID ,Transport,UTransport as 'اردو',[Tport Ph] as 'Phone No.'  from tblTransport");
+        }
+        public void clr()
+        {
+            txtId.Text = "";
+            txtCashier.Text = "";
+            txtPassword.Text = "";
+            txtRole.Text = "";
+        }
+
+
         public Transport()
         {
             InitializeComponent();
@@ -28,17 +39,12 @@ namespace Shakeel_Brothers
         }
         private void Transport_Load(object sender, EventArgs e)
         {
-            adap = new SqlDataAdapter("select ID ,Transport,UTransport as 'اردو',TportPh as 'Phone No.'  from tblTransport", c.con);
-            dt = new DataTable();
-            adap.Fill(dt);
-            dataGridView1.DataSource = dt;
+            showgrid();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
-            adap.Update(dt);
-            this.Close();
+
         }
 
     }
