@@ -86,6 +86,7 @@ CREATE TABLE [tblCashier](
 	[Password] [nvarchar] (30)  Not Null,
 	[Role] [nvarchar] (30)  Not Null,
 )
+insert into tblCashier(Cashier,Password,Role)values('umer','123','admin')
 
 
 CREATE TABLE [tblPacking](

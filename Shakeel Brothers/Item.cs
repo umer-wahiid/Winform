@@ -25,12 +25,17 @@ namespace Shakeel_Brothers
         public void clr()
         {
             txtItem.Text = "";
+            txtId.Text = "";
             txtPacking.Text = "";
             txtQty.Text = "";
             txtRate.Text = "";
             txtUitem.Text = "";
             txtUpacking.Text = "";
             txtUqty.Text = "";
+        }
+        private void Item_Load(object sender, EventArgs e)
+        {
+            showgrid();
         }
 
         public Item()
@@ -45,7 +50,7 @@ namespace Shakeel_Brothers
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (txtItem.Text != "" && txtPacking.Text != "" && txtUitem.Text != "" && txtUpacking.Text != "")
+            if (txtItem.Text != "" && txtPacking.Text != "" && txtUitem.Text != "" && txtUpacking.Text != ""&& txtId.Text == "")
             {
                 SqlCommand cmd = new SqlCommand("insert into tblRawMaterial(RawName,URawName,Packing,UPacking,PQty,Measure,PRate)values(@n,@un,@p,@up,@c,@m,@r)", c.con);
                 cmd.Parameters.AddWithValue("@n", txtItem.Text);
@@ -68,9 +73,9 @@ namespace Shakeel_Brothers
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtItem.Text != "" && txtPacking.Text != "" && txtUitem.Text != "" && txtUpacking.Text != "" && txtId.Text != "")
+            if (txtItem.Text != "" && txtPacking.Text != "" && txtUitem.Text != "" && txtUpacking.Text != "" && txtRate.Text != "" && txtId.Text != "")
             {
-                SqlCommand cmd = new SqlCommand("update tblRawMaterial set RawName=@n,URawName=@un,Packing=@p,UPacking=@up,PQty=@c,Measure=@m,PRate=@r", c.con);
+                SqlCommand cmd = new SqlCommand("update tblRawMaterial set RawName=@n,URawName=@un,Packing=@p,UPacking=@up,PQty=@c,Measure=@m,PRate=@r  where ID=@i", c.con);
                 cmd.Parameters.AddWithValue("@i", txtId.Text);
                 cmd.Parameters.AddWithValue("@n", txtItem.Text);
                 cmd.Parameters.AddWithValue("@un", txtUitem.Text);
@@ -93,10 +98,10 @@ namespace Shakeel_Brothers
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (txtId.Text != "")
+            if (txtRate.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("Delete from tblRawMaterial where ID=@i", c.con);
-                cmd.Parameters.AddWithValue("@i", txtId.Text);
+                cmd.Parameters.AddWithValue("@i", txtRate.Text);
                 c.IUD(cmd);
                 clr();
                 showgrid();
@@ -109,9 +114,29 @@ namespace Shakeel_Brothers
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = c.GetData("select * from tblRawMaterial Where RawName like '" + txtSearch.Text + "'+'%'");
+            dataGridView1.DataSource = c.GetData("select ID, RawName as 'Items', Packing, URawName as 'آئٹم کا نام', UPacking as 'پیکنگ', PQty as 'پیک مقدار', Measure as 'پیمانہ', PRate as 'پیک ریٹ'  from tblRawMaterial Where RawName like '" + txtSearch.Text + "'+'%'");
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTransfer.i = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            DataTransfer.n = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            DataTransfer.p = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            DataTransfer.un = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            DataTransfer.up = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            DataTransfer.c = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            DataTransfer.m = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            DataTransfer.r = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+
+            txtId.Text = DataTransfer.i;
+            txtItem.Text = DataTransfer.n;
+            txtUitem.Text = DataTransfer.un;
+            txtPacking.Text = DataTransfer.p;
+            txtUpacking.Text = DataTransfer.up;
+            txtQty.Text = DataTransfer.c;
+            txtUqty.Text = DataTransfer.m;
+            txtRate.Text = DataTransfer.r;
+        }
 
 
 
@@ -132,9 +157,6 @@ namespace Shakeel_Brothers
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-        private void Item_Load(object sender, EventArgs e)
         {
         }
         private void button1_Click(object sender, EventArgs e)

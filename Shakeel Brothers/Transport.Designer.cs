@@ -57,9 +57,8 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(481, 500);
+            this.panel1.Size = new System.Drawing.Size(722, 769);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -68,9 +67,8 @@
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(481, 500);
+            this.panel3.Size = new System.Drawing.Size(722, 769);
             this.panel3.TabIndex = 1;
             // 
             // panel2
@@ -89,19 +87,17 @@
             this.panel2.Controls.Add(this.txtTransport);
             this.panel2.Controls.Add(this.name);
             this.panel2.Controls.Add(this.btnBack);
-            this.panel2.Location = new System.Drawing.Point(0, 315);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(0, 485);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(481, 182);
+            this.panel2.Size = new System.Drawing.Size(722, 280);
             this.panel2.TabIndex = 0;
             // 
             // btnUpdate
             // 
             this.btnUpdate.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnUpdate.Location = new System.Drawing.Point(329, 138);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Location = new System.Drawing.Point(494, 212);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(56, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(84, 43);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -109,30 +105,27 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(271, 29);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearch.Location = new System.Drawing.Point(406, 45);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(114, 20);
+            this.txtSearch.Size = new System.Drawing.Size(169, 26);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 32);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(339, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "Search";
             // 
             // btnDel
             // 
             this.btnDel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnDel.Location = new System.Drawing.Point(407, 138);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDel.Location = new System.Drawing.Point(610, 212);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(56, 28);
+            this.btnDel.Size = new System.Drawing.Size(84, 43);
             this.btnDel.TabIndex = 6;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -140,30 +133,27 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(62, 94);
-            this.txtId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtId.Location = new System.Drawing.Point(93, 145);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(102, 20);
+            this.txtId.Size = new System.Drawing.Size(151, 26);
             this.txtId.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 99);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(60, 152);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.Size = new System.Drawing.Size(26, 20);
             this.label1.TabIndex = 13;
             this.label1.Text = "ID";
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(92, 138);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(138, 212);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 28);
+            this.button1.Size = new System.Drawing.Size(330, 43);
             this.button1.TabIndex = 4;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
@@ -171,65 +161,58 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(62, 70);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPhone.Location = new System.Drawing.Point(93, 108);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(102, 20);
+            this.txtPhone.Size = new System.Drawing.Size(151, 26);
             this.txtPhone.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 74);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(32, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "Phone";
             // 
             // txtUtransport
             // 
-            this.txtUtransport.Location = new System.Drawing.Point(62, 46);
-            this.txtUtransport.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUtransport.Location = new System.Drawing.Point(93, 71);
             this.txtUtransport.Name = "txtUtransport";
-            this.txtUtransport.Size = new System.Drawing.Size(102, 20);
+            this.txtUtransport.Size = new System.Drawing.Size(151, 26);
             this.txtUtransport.TabIndex = 1;
             // 
             // fname
             // 
             this.fname.AutoSize = true;
-            this.fname.Location = new System.Drawing.Point(4, 50);
-            this.fname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fname.Location = new System.Drawing.Point(6, 77);
             this.fname.Name = "fname";
-            this.fname.Size = new System.Drawing.Size(55, 13);
+            this.fname.Size = new System.Drawing.Size(68, 20);
             this.fname.TabIndex = 7;
             this.fname.Text = "ٹرانسپورٹ";
             // 
             // txtTransport
             // 
-            this.txtTransport.Location = new System.Drawing.Point(62, 22);
-            this.txtTransport.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTransport.Location = new System.Drawing.Point(93, 34);
             this.txtTransport.Name = "txtTransport";
-            this.txtTransport.Size = new System.Drawing.Size(102, 20);
+            this.txtTransport.Size = new System.Drawing.Size(151, 26);
             this.txtTransport.TabIndex = 0;
             // 
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(7, 27);
-            this.name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.name.Location = new System.Drawing.Point(10, 42);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(52, 13);
+            this.name.Size = new System.Drawing.Size(77, 20);
             this.name.TabIndex = 5;
             this.name.Text = "Transport";
             // 
             // btnBack
             // 
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBack.Location = new System.Drawing.Point(18, 138);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Location = new System.Drawing.Point(27, 212);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(56, 28);
+            this.btnBack.Size = new System.Drawing.Size(84, 43);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -239,24 +222,24 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeight = 26;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(481, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 769);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             // 
             // Transport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.button1;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 500);
+            this.CancelButton = this.btnBack;
+            this.ClientSize = new System.Drawing.Size(722, 769);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Transport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transport";
