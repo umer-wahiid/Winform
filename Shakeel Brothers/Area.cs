@@ -25,7 +25,7 @@ namespace Shakeel_Brothers
         private void Area_Load(object sender, EventArgs e)
         {
             //adap = new SqlDataAdapter("select ID ,Area ,UArea as 'علاقہ' ,City , UCity as 'شہر' from tblArea", c.con);
-            adap = new SqlDataAdapter("select tblArea.ID,tblArea.Area ,tblArea.UArea,tblArea.CityId,tblCity.City from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID", c.con);
+            adap = new SqlDataAdapter("select tblArea.ID, tblArea.Area ,tblArea.UArea,tblArea.CityId,tblCity.City from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID", c.con);
             dt = new DataTable();
             adap.Fill(dt);
             dataGridView1.DataSource = dt;
