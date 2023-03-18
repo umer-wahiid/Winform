@@ -25,7 +25,7 @@ namespace Shakeel_Brothers
         private void Area_Load(object sender, EventArgs e)
         {
             //adap = new SqlDataAdapter("select ID ,Area ,UArea as 'علاقہ' ,City , UCity as 'شہر' from tblArea", c.con);
-            adap = new SqlDataAdapter("select tblArea.ID,tblArea.Area ,tblArea.UArea,tblArea.City,tblCity.City,tblCity.UCity from tblArea INNER JOIN tblCity ON tblArea.City = tblCity.ID", c.con);
+            adap = new SqlDataAdapter("select tblArea.ID,tblArea.Area ,tblArea.UArea,tblArea.CityId,tblCity.City from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID", c.con);
             dt = new DataTable();
             adap.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -46,7 +46,7 @@ namespace Shakeel_Brothers
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            adap = new SqlDataAdapter("select tblArea.ID,tblArea.Area ,tblArea.UArea,tblCity.City,tblCity.UCity from tblArea INNER JOIN tblCity ON tblArea.City = tblCity.ID Where tblArea.Area like '" + txtSearch.Text + "'+'%'", c.con);
+            adap = new SqlDataAdapter("select tblArea.ID,tblArea.Area ,tblArea.UArea,tblCity.City from tblArea INNER JOIN tblCity ON tblArea.City = tblCity.ID Where tblArea.Area like '" + txtSearch.Text + "'+'%'", c.con);
             dt = new DataTable();
             adap.Fill(dt);
             dataGridView1.DataSource = dt;
