@@ -60,7 +60,8 @@ namespace Shakeel_Brothers
 
         private void Customer_Click(object sender, EventArgs e)
         {
-
+            Customer a = new Customer();
+            a.Show();
         }
 
         private void Area_Click(object sender, EventArgs e)

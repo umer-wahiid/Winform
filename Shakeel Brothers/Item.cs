@@ -29,8 +29,6 @@ namespace Shakeel_Brothers
 
         private void Item_Load(object sender, EventArgs e)
         {
-            
-
             adap = new SqlDataAdapter("select ID ,RawName as 'Items',Packing,URawName as 'آئٹم کا نام',UPacking as 'پیکنگ',PQty as 'پیک مقدار',Measure as 'پیمانہ', PRate as 'پیک ریٹ'  from tblRawMaterial", c.con);
             dt = new DataTable();
             adap.Fill(dt);
@@ -42,6 +40,29 @@ namespace Shakeel_Brothers
             SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
             adap.Update(dt);
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Item_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
+            adap.Update(dt);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            adap = new SqlDataAdapter("select ID ,RawName as 'Items',Packing,URawName as 'آئٹم کا نام',UPacking as 'پیکنگ',PQty as 'پیک مقدار',Measure as 'پیمانہ', PRate as 'پیک ریٹ'  from tblRawMaterial Where RawName like '" + txtSearch.Text + "'+'%'", c.con);
+            dt = new DataTable();
+            adap.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

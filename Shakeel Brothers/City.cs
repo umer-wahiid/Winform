@@ -41,5 +41,19 @@ namespace Shakeel_Brothers
             adap.Fill(dt);
             dataGridView1.DataSource = dt;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            adap = new SqlDataAdapter("select Id , City , Ucity as 'شہر' from tblCity Where City like '" + txtSearch.Text + "'+'%'", c.con);
+            dt = new DataTable();
+            adap.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+
+        private void City_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
+            adap.Update(dt);
+        }
     }
 }
