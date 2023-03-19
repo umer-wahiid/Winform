@@ -48,3 +48,20 @@ C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csp
 C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.exe
 C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.pdb
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\bin\Debug\Shakeel Brothers.exe.config
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\bin\Debug\Shakeel Brothers.exe
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\bin\Debug\Shakeel Brothers.pdb
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.AssemblyReference.cache
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.SuggestedBindingRedirects.cache
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Area.resources
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Cashier.resources
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.City.resources
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Startup.resources
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Item.resources
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Login.resources
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Properties.Resources.resources
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Transport.resources
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.GenerateResource.cache
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.CoreCompileInputs.cache
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.exe
+C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.pdb
