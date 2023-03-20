@@ -15,13 +15,14 @@ namespace Shakeel_Brothers
     {
         SqlDataAdapter adap;
         DataTable dt;
+        DataSet rd;
 
         Class1 c = new Class1();
 
         public void showgrid()
         {
-            //dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID");
-            dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.City = tblCity.ID");
+            dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID");
+            //dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.City = tblCity.ID");
         }
         public void getitems()
         {
@@ -63,9 +64,16 @@ namespace Shakeel_Brothers
             if (txtArea.Text != "" && txtUarea.Text != "" && txtCity.Text != "" && txtId.Text == "")
             {
                 SqlCommand cmd = new SqlCommand("insert into tblArea(Area,UArea,CityId)values(@r,@p,@c)", c.con);
+                //SqlCommand cm = new SqlCommand("select ID from tblCity where City = '" + txtCity + "'", c.con);
+                //adap = new SqlDataAdapter("select ID from tblCity where City = '" + txtCity + "'", c.con);
+                //dt = new DataTable();
+                //adap.Fill(dt);
+                //dataGridView1.DataSource = dt;
+                //int id = Convert.ToInt32(rd);
+
                 cmd.Parameters.AddWithValue("@r", txtArea.Text);
                 cmd.Parameters.AddWithValue("@p", txtUarea.Text);
-                cmd.Parameters.AddWithValue("@c", txtCity.Text);
+                cmd.Parameters.AddWithValue("@c", Convert.ToInt32(DataTransfer.c));
                 c.IUD(cmd);
                 clr();
                 showgrid();
@@ -82,10 +90,11 @@ namespace Shakeel_Brothers
             if (txtArea.Text != "" && txtUarea.Text != "" && txtCity.Text != "" && txtId.Text == "" && txtId.Text!="")
             {
                 SqlCommand cmd = new SqlCommand("update tblArea set Area=@r ,UArea=@p,CityId=@c where ID=@i", c.con);
+                SqlCommand cm = new SqlCommand("select ID from tblCity where City = '"+txtCity+"'", c.con);
                 cmd.Parameters.AddWithValue("@i", txtId.Text);
                 cmd.Parameters.AddWithValue("@r", txtArea.Text);
                 cmd.Parameters.AddWithValue("@p", txtUarea.Text);
-                cmd.Parameters.AddWithValue("@c", txtCity.Text);
+                cmd.Parameters.AddWithValue("@c", DataTransfer.c);
                 c.IUD(cmd);
                 clr();
                 showgrid();
@@ -106,28 +115,8 @@ namespace Shakeel_Brothers
         }
         private void txtCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
-
-        private void Saveexit_Click(object sender, EventArgs e)
-        {
-            //SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
-            //adap.Update(dt);
-            //this.Close();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            //adap = new SqlDataAdapter("select tblArea.ID,tblArea.Area ,tblArea.UArea,tblCity.City from tblArea INNER JOIN tblCity ON tblArea.City = tblCity.ID Where tblArea.Area like '" + txtSearch.Text + "'+'%'", c.con);
-            //dt = new DataTable();
-            //adap.Fill(dt);
-            //dataGridView1.DataSource = dt;
+            SqlCommand cm = new SqlCommand("select ID from tblCity where City = '" + txtCity + "'", c.con);
+            DataTransfer.c = cm.ToString();
         }
 
         private void Area_FormClosing(object sender, FormClosingEventArgs e)
