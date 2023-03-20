@@ -20,13 +20,20 @@ namespace Shakeel_Brothers
 
         public void showgrid()
         {
-            dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID");
+            //dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID");
+            dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.City = tblCity.ID");
         }
         public void getitems()
         {
             SqlCommand cmd = new SqlCommand("select * from tblCity", c.con);
-            c.IUD(cmd);
-            string cities = 
+            c.con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string cities = dr.GetString(1);
+                txtCity.Items.Add(cities);
+            }
+            c.con.Close();
         }
         public void clr()
         {
