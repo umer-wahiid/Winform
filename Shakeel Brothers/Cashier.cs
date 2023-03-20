@@ -50,7 +50,7 @@ namespace Shakeel_Brothers
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (txtCashier.Text != "" && txtPassword.Text != "" && txtRole.Text!="" && txtId.Text=="")
+            if (txtCashier.Text != "" && txtPassword.Text != "" && txtRole.Text!="")
             {
                 SqlCommand cmd = new SqlCommand("insert into tblCashier(Cashier,Password,Role)values(@c,@p,@r)", c.con);
                 cmd.Parameters.AddWithValue("@c", txtCashier.Text);
@@ -70,7 +70,7 @@ namespace Shakeel_Brothers
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txtCashier.Text != "" && txtPassword.Text != "" && txtRole.Text != "")
+            if (txtCashier.Text != "" && txtPassword.Text != "" && txtRole.Text != "" && txtId.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("update tblCashier set Cashier=@c ,Password=@p,Role=@r where ID=@i", c.con);
                 cmd.Parameters.AddWithValue("@i", txtId.Text);

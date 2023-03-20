@@ -38,13 +38,13 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtCity = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUarea = new System.Windows.Forms.TextBox();
             this.fname = new System.Windows.Forms.Label();
             this.txtArea = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.txtCity = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -72,11 +72,12 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(401, 515);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtCity);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label2);
@@ -84,7 +85,6 @@
             this.panel2.Controls.Add(this.txtId);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.txtCity);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtUarea);
             this.panel2.Controls.Add(this.fname);
@@ -96,7 +96,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(401, 185);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 0;
             // 
             // btnUpdate
             // 
@@ -105,9 +105,10 @@
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(56, 28);
-            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtSearch
             // 
@@ -115,7 +116,8 @@
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(114, 20);
-            this.txtSearch.TabIndex = 3;
+            this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label2
             // 
@@ -165,17 +167,10 @@
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(220, 28);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // txtCity
-            // 
-            this.txtCity.Location = new System.Drawing.Point(71, 74);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(102, 20);
-            this.txtCity.TabIndex = 2;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label4
             // 
@@ -193,7 +188,7 @@
             this.txtUarea.Margin = new System.Windows.Forms.Padding(2);
             this.txtUarea.Name = "txtUarea";
             this.txtUarea.Size = new System.Drawing.Size(102, 20);
-            this.txtUarea.TabIndex = 1;
+            this.txtUarea.TabIndex = 2;
             // 
             // fname
             // 
@@ -211,7 +206,7 @@
             this.txtArea.Margin = new System.Windows.Forms.Padding(2);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(102, 20);
-            this.txtArea.TabIndex = 0;
+            this.txtArea.TabIndex = 1;
             // 
             // name
             // 
@@ -233,6 +228,20 @@
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // txtCity
+            // 
+            this.txtCity.FormattingEnabled = true;
+            this.txtCity.Items.AddRange(new object[] {
+            "karachi",
+            "lahore",
+            "multan"});
+            this.txtCity.Location = new System.Drawing.Point(71, 75);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(102, 21);
+            this.txtCity.TabIndex = 19;
+            this.txtCity.SelectedIndexChanged += new System.EventHandler(this.txtCity_SelectedIndexChanged);
             // 
             // Area
             // 
@@ -268,12 +277,12 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUarea;
         private System.Windows.Forms.Label fname;
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox txtCity;
     }
 }
