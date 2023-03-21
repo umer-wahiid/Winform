@@ -65,3 +65,4 @@ C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj
 C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.csproj.CoreCompileInputs.cache
 C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.exe
 C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel Brothers.pdb
+C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Customer.resources

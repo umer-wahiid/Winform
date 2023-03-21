@@ -24,6 +24,7 @@ namespace Shakeel_Brothers
             dataGridView2.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID");
             //dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.City = tblCity.ID");
         }
+
         public void getitems()
         {
             SqlCommand cmd = new SqlCommand("select City from tblCity", c.con);
@@ -36,11 +37,12 @@ namespace Shakeel_Brothers
                 coll.Add(cities);
                 txtCity.Items.Add(cities);
             }
-                txtCity.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtCity.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtCity.AutoCompleteMode = AutoCompleteMode.Append;
             txtCity.AutoCompleteCustomSource = coll;
-c.con.Close();
+            c.con.Close();
         }
+
         public void clr()
         {
             txtId.Text = "";
@@ -48,6 +50,7 @@ c.con.Close();
             txtUarea.Text = "";
             txtCity.Text = "";
         }
+
         public Area()
         {
             InitializeComponent();
@@ -58,13 +61,15 @@ c.con.Close();
             showgrid();
             getitems();
         }
+
         private void btnBack_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtArea.Text != "" && txtUarea.Text != "" && txtCity.Text != "" && txtId.Text == "")
+            if (txtArea.Text != "" && txtUarea.Text != "" && txtCity.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("insert into tblArea(Area,UArea,CityId)values(@r,@p,@c)", c.con);
                 SqlCommand cm = new SqlCommand("select ID from tblCity where City = '" + txtCity.Text + "'", c.con);
@@ -114,7 +119,7 @@ c.con.Close();
         }
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = c.GetData("select * from tblArea Where Area like '" + txtSearch.Text + "'+'%'");
+            dataGridView2.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID Where tblArea.Area like '" + txtSearch.Text + "'+'%'");
         }
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {

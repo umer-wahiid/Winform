@@ -122,6 +122,9 @@
     <EmbeddedResource Include="City.resx">
       <DependentUpon>City.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

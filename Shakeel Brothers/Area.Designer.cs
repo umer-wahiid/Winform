@@ -30,6 +30,8 @@
         {
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtCity = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -42,8 +44,6 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtUarea = new System.Windows.Forms.TextBox();
             this.txtArea = new System.Windows.Forms.TextBox();
-            this.txtCity = new System.Windows.Forms.ComboBox();
-            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(527, 519);
             this.dataGridView2.TabIndex = 10;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
@@ -80,6 +81,25 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(527, 144);
             this.panel3.TabIndex = 0;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(440, 99);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // txtCity
+            // 
+            this.txtCity.FormattingEnabled = true;
+            this.txtCity.Location = new System.Drawing.Point(215, 23);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(100, 21);
+            this.txtCity.Sorted = true;
+            this.txtCity.TabIndex = 3;
             // 
             // btnSave
             // 
@@ -189,25 +209,6 @@
             this.txtArea.Size = new System.Drawing.Size(100, 20);
             this.txtArea.TabIndex = 1;
             // 
-            // txtCity
-            // 
-            this.txtCity.FormattingEnabled = true;
-            this.txtCity.Location = new System.Drawing.Point(215, 23);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(100, 21);
-            this.txtCity.Sorted = true;
-            this.txtCity.TabIndex = 3;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(440, 99);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // Area
             // 
             this.AcceptButton = this.btnSave;
@@ -216,6 +217,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView2);
             this.Name = "Area";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AREA";
             this.Load += new System.EventHandler(this.Area_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
