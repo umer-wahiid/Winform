@@ -21,7 +21,7 @@ namespace Shakeel_Brothers
 
         public void showgrid()
         {
-            dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID");
+            dataGridView2.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID");
             //dataGridView1.DataSource = c.GetData("select tblArea.ID, tblArea.Area ,tblArea.UArea as 'علاقہ' ,tblCity.City,tblCity.UCity as 'شہر' from tblArea INNER JOIN tblCity ON tblArea.City = tblCity.ID");
         }
         public void getitems()
@@ -33,6 +33,9 @@ namespace Shakeel_Brothers
             {
                 string cities = dr.GetString(1);
                 txtCity.Items.Add(cities);
+                txtCity.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txtCity.AutoCompleteMode = AutoCompleteMode.Suggest;
+                txtCity.AutoCompleteMode = AutoCompleteMode.Suggest;
             }
             c.con.Close();
         }
@@ -48,32 +51,29 @@ namespace Shakeel_Brothers
             InitializeComponent();
         }
 
-        private void Area_Load(object sender, EventArgs e)
+        private void Area_Load_1(object sender, EventArgs e)
         {
-            //adap = new SqlDataAdapter("select ID ,Area ,UArea as 'علاقہ' ,City , UCity as 'شہر' from tblArea", c.con);
-            //adap = new SqlDataAdapter("select tblArea.ID, tblArea.Area ,tblArea.UArea,tblArea.CityId,tblCity.City from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID", c.con);
-            //dt = new DataTable();
-            //adap.Fill(dt);
-            //dataGridView1.DataSource = dt;
             showgrid();
             getitems();
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtArea.Text != "" && txtUarea.Text != "" && txtCity.Text != "" && txtId.Text == "")
             {
                 SqlCommand cmd = new SqlCommand("insert into tblArea(Area,UArea,CityId)values(@r,@p,@c)", c.con);
-                //SqlCommand cm = new SqlCommand("select ID from tblCity where City = '" + txtCity + "'", c.con);
-                //adap = new SqlDataAdapter("select ID from tblCity where City = '" + txtCity + "'", c.con);
-                //dt = new DataTable();
-                //adap.Fill(dt);
-                //dataGridView1.DataSource = dt;
-                //int id = Convert.ToInt32(rd);
-
+                SqlCommand cm = new SqlCommand("select ID from tblCity where City = '" + txtCity.Text + "'", c.con);
+                c.con.Open();
+                SqlDataReader dr = cm.ExecuteReader();
+                dr.Read();
+                int ids = dr.GetInt32(0);
+                cmd.Parameters.AddWithValue("@c", ids);
+                c.con.Close();
                 cmd.Parameters.AddWithValue("@r", txtArea.Text);
                 cmd.Parameters.AddWithValue("@p", txtUarea.Text);
-                cmd.Parameters.AddWithValue("@c", Convert.ToInt32(DataTransfer.c));
                 c.IUD(cmd);
                 clr();
                 showgrid();
@@ -85,16 +85,21 @@ namespace Shakeel_Brothers
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            if (txtArea.Text != "" && txtUarea.Text != "" && txtCity.Text != "" && txtId.Text == "" && txtId.Text!="")
+            if (txtArea.Text != "" && txtUarea.Text != "" && txtCity.Text != "" && txtId.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("update tblArea set Area=@r ,UArea=@p,CityId=@c where ID=@i", c.con);
-                SqlCommand cm = new SqlCommand("select ID from tblCity where City = '"+txtCity+"'", c.con);
+                SqlCommand cm = new SqlCommand("select ID from tblCity where City = '" + txtCity.Text + "'", c.con);
+                c.con.Open();
+                SqlDataReader dr = cm.ExecuteReader();
+                dr.Read();
+                int ids = dr.GetInt32(0);
+                cmd.Parameters.AddWithValue("@c", ids);
+                c.con.Close();
                 cmd.Parameters.AddWithValue("@i", txtId.Text);
                 cmd.Parameters.AddWithValue("@r", txtArea.Text);
                 cmd.Parameters.AddWithValue("@p", txtUarea.Text);
-                cmd.Parameters.AddWithValue("@c", DataTransfer.c);
                 c.IUD(cmd);
                 clr();
                 showgrid();
@@ -105,9 +110,79 @@ namespace Shakeel_Brothers
                 MessageBox.Show("Please Insert Data to Update !!");
             }
         }
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = c.GetData("select * from tblArea Where Area like '" + txtSearch.Text + "'+'%'");
+        }
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTransfer.i = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+            DataTransfer.r = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+            DataTransfer.p = dataGridView2.CurrentRow.Cells[2].Value.ToString();
+            DataTransfer.c = dataGridView2.CurrentRow.Cells[3].Value.ToString();
+
+            txtId.Text = DataTransfer.i;
+            txtArea.Text = DataTransfer.r;
+            txtUarea.Text = DataTransfer.p;
+            txtCity.Text = DataTransfer.c;
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text != "")
+            {
+                SqlCommand cmd = new SqlCommand("Delete from tblArea where ID=@i", c.con);
+                cmd.Parameters.AddWithValue("@i", txtId.Text);
+                c.IUD(cmd);
+                clr();
+                showgrid();
+            }
+            else
+            {
+                MessageBox.Show("Select Data Before Delete !!");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void Area_Load(object sender, EventArgs e)
+        {
+            //adap = new SqlDataAdapter("select ID ,Area ,UArea as 'علاقہ' ,City , UCity as 'شہر' from tblArea", c.con);
+            //adap = new SqlDataAdapter("select tblArea.ID, tblArea.Area ,tblArea.UArea,tblArea.CityId,tblCity.City from tblArea INNER JOIN tblCity ON tblArea.CityId = tblCity.ID", c.con);
+            //dt = new DataTable();
+            //adap.Fill(dt);
+            //dataGridView1.DataSource = dt;
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+        }
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = c.GetData("select * from tblArea Where Area like '" + txtSearch.Text + "'+'%'");
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -130,6 +205,11 @@ namespace Shakeel_Brothers
             //SqlCommandBuilder cmbdl = new SqlCommandBuilder(adap);
             //adap.Update(dt);
             //this.Close();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
     }

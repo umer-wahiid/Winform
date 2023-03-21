@@ -28,231 +28,199 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtCity = new System.Windows.Forms.ComboBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtUarea = new System.Windows.Forms.TextBox();
-            this.fname = new System.Windows.Forms.Label();
-            this.txtArea = new System.Windows.Forms.TextBox();
-            this.name = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtUarea = new System.Windows.Forms.TextBox();
+            this.txtArea = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.ComboBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // dataGridView2
             // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(535, 634);
-            this.panel1.TabIndex = 0;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(527, 519);
+            this.dataGridView2.TabIndex = 10;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // panel2
+            // panel3
             // 
-            this.panel2.Controls.Add(this.txtCity);
-            this.panel2.Controls.Add(this.btnUpdate);
-            this.panel2.Controls.Add(this.txtSearch);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btnDel);
-            this.panel2.Controls.Add(this.txtId);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtUarea);
-            this.panel2.Controls.Add(this.fname);
-            this.panel2.Controls.Add(this.txtArea);
-            this.panel2.Controls.Add(this.name);
-            this.panel2.Controls.Add(this.btnBack);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 406);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(535, 228);
-            this.panel2.TabIndex = 0;
+            this.panel3.Controls.Add(this.btnDelete);
+            this.panel3.Controls.Add(this.txtCity);
+            this.panel3.Controls.Add(this.btnSave);
+            this.panel3.Controls.Add(this.btnUpdate);
+            this.panel3.Controls.Add(this.btnBack);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.txtSearch);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.txtId);
+            this.panel3.Controls.Add(this.txtUarea);
+            this.panel3.Controls.Add(this.txtArea);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 375);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(527, 144);
+            this.panel3.TabIndex = 0;
             // 
-            // txtCity
+            // btnSave
             // 
-            this.txtCity.FormattingEnabled = true;
-            this.txtCity.Location = new System.Drawing.Point(95, 92);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(135, 24);
-            this.txtCity.TabIndex = 3;
-            this.txtCity.SelectedIndexChanged += new System.EventHandler(this.txtCity_SelectedIndexChanged);
+            this.btnSave.Location = new System.Drawing.Point(106, 99);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(229, 23);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnUpdate.Location = new System.Drawing.Point(439, 177);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(350, 99);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 34);
-            this.btnUpdate.TabIndex = 6;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(311, 82);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(151, 22);
-            this.txtSearch.TabIndex = 4;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(356, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 18);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Search";
-            // 
-            // btnDel
-            // 
-            this.btnDel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnDel.Location = new System.Drawing.Point(543, 170);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 34);
-            this.btnDel.TabIndex = 6;
-            this.btnDel.Text = "Delete";
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(95, 129);
-            this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(135, 22);
-            this.txtId.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 133);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 16);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "ID :";
-            // 
-            // button1
-            // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(123, 176);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(293, 34);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 16);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "City :";
-            // 
-            // txtUarea
-            // 
-            this.txtUarea.Location = new System.Drawing.Point(95, 57);
-            this.txtUarea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUarea.Name = "txtUarea";
-            this.txtUarea.Size = new System.Drawing.Size(135, 22);
-            this.txtUarea.TabIndex = 2;
-            // 
-            // fname
-            // 
-            this.fname.AutoSize = true;
-            this.fname.Location = new System.Drawing.Point(32, 62);
-            this.fname.Name = "fname";
-            this.fname.Size = new System.Drawing.Size(41, 16);
-            this.fname.TabIndex = 7;
-            this.fname.Text = "علاقہ :";
-            // 
-            // txtArea
-            // 
-            this.txtArea.Location = new System.Drawing.Point(95, 22);
-            this.txtArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(135, 22);
-            this.txtArea.TabIndex = 1;
-            // 
-            // name
-            // 
-            this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(37, 27);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(42, 16);
-            this.name.TabIndex = 5;
-            this.name.Text = "Area :";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnBack
             // 
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBack.Location = new System.Drawing.Point(24, 177);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Location = new System.Drawing.Point(16, 99);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 34);
-            this.btnBack.TabIndex = 7;
-            this.btnBack.Text = "Back";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
-            // dataGridView1
+            // label8
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeight = 26;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(535, 634);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(394, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 15);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "SEARCH";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(373, 49);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(187, 52);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(24, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "ID :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(181, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "City :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(31, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 15);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "علاقہ :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Area :";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(215, 49);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 5;
+            // 
+            // txtUarea
+            // 
+            this.txtUarea.Location = new System.Drawing.Point(72, 49);
+            this.txtUarea.Name = "txtUarea";
+            this.txtUarea.Size = new System.Drawing.Size(100, 20);
+            this.txtUarea.TabIndex = 2;
+            // 
+            // txtArea
+            // 
+            this.txtArea.Location = new System.Drawing.Point(72, 23);
+            this.txtArea.Name = "txtArea";
+            this.txtArea.Size = new System.Drawing.Size(100, 20);
+            this.txtArea.TabIndex = 1;
+            // 
+            // txtCity
+            // 
+            this.txtCity.FormattingEnabled = true;
+            this.txtCity.Location = new System.Drawing.Point(215, 23);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(100, 21);
+            this.txtCity.Sorted = true;
+            this.txtCity.TabIndex = 3;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(440, 99);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Area
             // 
-            this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AcceptButton = this.btnSave;
             this.CancelButton = this.btnBack;
-            this.ClientSize = new System.Drawing.Size(535, 634);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClientSize = new System.Drawing.Size(527, 519);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.dataGridView2);
             this.Name = "Area";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Area";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Area_FormClosing);
-            this.Load += new System.EventHandler(this.Area_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "AREA";
+            this.Load += new System.EventHandler(this.Area_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,19 +230,35 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox txtSearch;
+        //private System.Windows.Forms.Button btnUpdate;
+        //private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.TextBox txtId;
+        //private System.Windows.Forms.Button btnDel;
+        //private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUarea;
+        //private System.Windows.Forms.TextBox txtUarea;
         private System.Windows.Forms.Label fname;
-        private System.Windows.Forms.TextBox txtArea;
+        //private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.Label name;
+        //private System.Windows.Forms.Button btnBack;
+        //private System.Windows.Forms.ComboBox txtCity;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtUarea;
+        private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.ComboBox txtCity;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
