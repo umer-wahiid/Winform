@@ -26,18 +26,20 @@ namespace Shakeel_Brothers
         }
         public void getitems()
         {
-            SqlCommand cmd = new SqlCommand("select * from tblCity", c.con);
+            SqlCommand cmd = new SqlCommand("select City from tblCity", c.con);
             c.con.Open();
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                string cities = dr.GetString(1);
+                string cities = dr.GetString(0);
+                coll.Add(cities);
                 txtCity.Items.Add(cities);
-                txtCity.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txtCity.AutoCompleteMode = AutoCompleteMode.Suggest;
-                txtCity.AutoCompleteMode = AutoCompleteMode.Suggest;
             }
-            c.con.Close();
+                txtCity.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtCity.AutoCompleteMode = AutoCompleteMode.Append;
+            txtCity.AutoCompleteCustomSource = coll;
+c.con.Close();
         }
         public void clr()
         {
