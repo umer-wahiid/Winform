@@ -80,6 +80,12 @@
       <DependentUpon>City.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="crtBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crtBill.Designer.cs">
+      <DependentUpon>crtBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="City.resx">
       <DependentUpon>City.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crtBill.resx">
+      <DependentUpon>crtBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>

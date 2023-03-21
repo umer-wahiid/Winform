@@ -94,7 +94,8 @@ namespace Shakeel_Brothers
 
         private void CreateBill_Click(object sender, EventArgs e)
         {
-
+            crtBill c = new crtBill();
+            c.Show();
         }
 
         private void Payments_Click(object sender, EventArgs e)

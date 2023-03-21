@@ -77,22 +77,29 @@ namespace Shakeel_Brothers
                 SqlCommand cm = new SqlCommand("select ID from tblCity where City = '" + txtCity.Text + "'", c.con);
                 c.con.Open();
                 SqlDataReader dr = cm.ExecuteReader();
-                dr.Read();
+                //dr.Read();
+                if (dr.Read()) { 
                 int ids = dr.GetInt32(0);
-                cmd.Parameters.AddWithValue("@c", ids);
-                c.con.Close();
-                cmd.Parameters.AddWithValue("@n", txtName.Text);
-                cmd.Parameters.AddWithValue("@un", txtUname.Text);
-                cmd.Parameters.AddWithValue("@cp", txtContact.Text);
-                cmd.Parameters.AddWithValue("@a", txtAddress.Text);
-                cmd.Parameters.AddWithValue("@p", txtPhone.Text);
-                cmd.Parameters.AddWithValue("@f", txtFax.Text);
-                cmd.Parameters.AddWithValue("@e", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@l", txtLimit.Text);
-                c.IUD(cmd);
-                clr();
-                showgrid();
-                txtName.Focus();
+                    cmd.Parameters.AddWithValue("@c", ids);
+                    c.con.Close();
+                    cmd.Parameters.AddWithValue("@n", txtName.Text);
+                    cmd.Parameters.AddWithValue("@un", txtUname.Text);
+                    cmd.Parameters.AddWithValue("@cp", txtContact.Text);
+                    cmd.Parameters.AddWithValue("@a", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@p", txtPhone.Text);
+                    cmd.Parameters.AddWithValue("@f", txtFax.Text);
+                    cmd.Parameters.AddWithValue("@e", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@l", txtLimit.Text);
+                    c.IUD(cmd);
+                    clr();
+                    showgrid();
+                    txtName.Focus();
+                }
+                else
+                {
+                    c.con.Close();
+                    MessageBox.Show("Please Select City !!");
+                }
             }
             else
             {

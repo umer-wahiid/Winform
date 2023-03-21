@@ -111,7 +111,7 @@ namespace Shakeel_Brothers
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = c.GetData("select * from tblTransport Where Transport like '" + txtSearch.Text + "'+'%'");
+            dataGridView1.DataSource = c.GetData("select ID ,Transport,UTransport as 'ٹرانسپورٹ',[Tport Ph] as 'Phone No.'  from tblTransport Where Transport like '" + txtSearch.Text + "'+'%'");
         }
 
 
