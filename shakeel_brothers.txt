@@ -1,4 +1,4 @@
-CREATE DATABASE shakeel_brothers
+﻿CREATE DATABASE shakeel_brothers
 USE [shakeel_brothers]
 
 CREATE TABLE [tblCity](
