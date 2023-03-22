@@ -1,5 +1,5 @@
-CREATE DATABASE shakeel_brother
-USE [shakeel_brother]
+CREATE DATABASE shakeel_brothers
+USE [shakeel_brothers]
 
 CREATE TABLE [tblCity](
 	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
@@ -24,16 +24,16 @@ CREATE TABLE [tblSupplier](
 	[Fax] [nvarchar] (30) NULL,
 	[Email] [nvarchar] (40) NULL,
 	[City] int FOREIGN KEY REFERENCES tblCity(ID),
-	[Limit] [int] NULL,
+	[Limit] [bigint] NULL,
 )
 
 CREATE TABLE [tblTransactions](
 	[TID] [int] Primary Key IDENTITY(1,1) NOT NULL,
-	[TDate] [Date] Not NULL,
-	[TTime] [Time] NULL,
+	[TDate] DateTime Not NULL,
+	[TTime] Time NULL,
 	[BillNum] [nvarchar] (30) NULL,
 	[Supplier] int FOREIGN KEY REFERENCES tblSupplier(Id),
-	[Debit] int Null,
+	[Debit] bigint Null,
 	[Select] [nvarchar] (30) NULL,
 	[Description] [nvarchar] (50) NULL,
 )
@@ -41,15 +41,15 @@ CREATE TABLE [tblTransactions](
 
 CREATE TABLE [tblRawMaterial](
 	[Id] [int] Primary Key IDENTITY(1,1) NOT NULL,
-	[RawName] [nvarchar] (40) NULL,
-	[URawName] [nvarchar] (40) NULL,
+	[RawName] [nvarchar] (40) NOT NULL,
+	[URawName] [nvarchar] (40) NOT NULL,
 	[Packing] [nvarchar] (25)  NULL,
 	[UPacking] [nvarchar] (25) NULL,
 	[PQty] [int]  NULL,
 	[Measure] [nvarchar] (25)  NULL,
 	[PRate] [int] Null,
 )
-
+insert into tblRawMaterial(RawName,URawName)values('Balance','بیلنس')
 
 
 CREATE TABLE [tblTransport](
@@ -58,6 +58,7 @@ CREATE TABLE [tblTransport](
 	[UTransport] [nvarchar] (30) Not Null,
 	[Tport Ph] [nvarchar] (15) Null,
 )
+insert into tblTransport(Transport,UTransport)values('Self','سلف')
 
 
 
@@ -68,13 +69,14 @@ CREATE TABLE [tblTransDetails](
 	[DTime] [Time] NULL,
 	[RawMaterial] int FOREIGN KEY REFERENCES tblRawMaterial(Id),
 	[Qty] [int] Null,
-	[Rate] [int]  Null,
+	[Rate] [bigint]  Null,
 	[Nag] [int]  Null,
 	[Bilty] [nvarchar] (25)  Null,
 	[Transport] int FOREIGN KEY REFERENCES tblTransport(ID),
 	[Labour] [int]  Null,
 	[Bardan] [int]  Null,
 	[User] [nvarchar] (30) Null,
+	[Total] [bigint]  NOT NULL,
 )
 
 
