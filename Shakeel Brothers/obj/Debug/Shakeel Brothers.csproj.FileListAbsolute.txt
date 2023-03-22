@@ -69,3 +69,5 @@ C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Cus
 C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Customer.resources
 C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.crtBill.resources
 C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.crtBill.resources
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.crtBill.resources
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Customer.resources

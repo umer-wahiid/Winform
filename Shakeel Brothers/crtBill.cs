@@ -61,19 +61,10 @@ namespace Shakeel_Brothers
             txtDate.Text = "";
             txtAcc.Text = "";
             txtAmount.Text = "";
-            txtTid.Text = "";
         }
-        public crtBill()
+        
+        public void txtid()
         {
-            InitializeComponent();
-        }
-
-        private void crtBill_Load(object sender, EventArgs e)
-        {
-            getitems();
-            getAcc();
-
-
             SqlCommand cmd = new SqlCommand("select Top 1 TID from tblTransactions ORDER BY TID DESC", c.con);
             c.con.Open();
             SqlDataReader dr = cmd.ExecuteReader();
@@ -92,7 +83,28 @@ namespace Shakeel_Brothers
             }
         }
 
-            private void btnSave_Click(object sender, EventArgs e)
+
+
+
+
+
+
+
+        public crtBill()
+        {
+            InitializeComponent();
+        }
+
+        private void crtBill_Load(object sender, EventArgs e)
+        {
+            txtid();
+            getitems();
+            getAcc();
+
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtCustomer.Text != "" && txtDate.Text != "" && txtAmount.Text == "")
             {
@@ -113,8 +125,9 @@ namespace Shakeel_Brothers
                     c.IUD(cmd);
                     clr();
                     txtOrder.Focus();
-                    getitems();
+                    txtid();
                     getAcc();
+                    getitems();
                 }
                 else
                 {
@@ -151,6 +164,9 @@ namespace Shakeel_Brothers
                     c.IUD(cmdd);
                     clr();
                     txtOrder.Focus();
+                    txtid();
+                    getAcc();
+                    getitems();
                 }
                 else
                 {
