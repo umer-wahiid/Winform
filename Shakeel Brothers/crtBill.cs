@@ -77,13 +77,22 @@ namespace Shakeel_Brothers
             SqlCommand cmd = new SqlCommand("select Top 1 TID from tblTransactions ORDER BY TID DESC", c.con);
             c.con.Open();
             SqlDataReader dr = cmd.ExecuteReader();
-            dr.Read();
-            int ids = dr.GetInt32(0);
-            c.con.Close();
-            txtTid.Text += ids+1;
+            if (dr.HasRows)
+            {
+                dr.Read();
+                int ids = dr.GetInt32(0);
+                c.con.Close();
+                txtTid.Text += ids + 1;
+            }
+            else
+            {
+                int ids = 0;
+                c.con.Close();
+                txtTid.Text += ids + 1;
+            }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+            private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtCustomer.Text != "" && txtDate.Text != "" && txtAmount.Text == "")
             {
@@ -104,6 +113,8 @@ namespace Shakeel_Brothers
                     c.IUD(cmd);
                     clr();
                     txtOrder.Focus();
+                    getitems();
+                    getAcc();
                 }
                 else
                 {
@@ -156,6 +167,12 @@ namespace Shakeel_Brothers
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }

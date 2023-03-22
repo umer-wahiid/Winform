@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTid = new System.Windows.Forms.TextBox();
+            this.txtAcc = new System.Windows.Forms.ComboBox();
+            this.txtDate = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
@@ -39,10 +43,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtOrder = new System.Windows.Forms.TextBox();
-            this.txtDate = new System.Windows.Forms.DateTimePicker();
-            this.txtAcc = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTid = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(372, 189);
             this.panel1.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(213, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "ID :";
+            // 
+            // txtTid
+            // 
+            this.txtTid.Location = new System.Drawing.Point(241, 50);
+            this.txtTid.Name = "txtTid";
+            this.txtTid.ReadOnly = true;
+            this.txtTid.Size = new System.Drawing.Size(100, 20);
+            this.txtTid.TabIndex = 25;
+            // 
+            // txtAcc
+            // 
+            this.txtAcc.FormattingEnabled = true;
+            this.txtAcc.Location = new System.Drawing.Point(72, 100);
+            this.txtAcc.Name = "txtAcc";
+            this.txtAcc.Size = new System.Drawing.Size(100, 21);
+            this.txtAcc.Sorted = true;
+            this.txtAcc.TabIndex = 24;
+            // 
+            // txtDate
+            // 
+            this.txtDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDate.Location = new System.Drawing.Point(72, 50);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(100, 20);
+            this.txtDate.TabIndex = 23;
             // 
             // label12
             // 
@@ -93,6 +127,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(100, 20);
             this.txtAmount.TabIndex = 6;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
             // txtCustomer
             // 
@@ -159,40 +194,6 @@
             this.txtOrder.Name = "txtOrder";
             this.txtOrder.Size = new System.Drawing.Size(100, 20);
             this.txtOrder.TabIndex = 1;
-            // 
-            // txtDate
-            // 
-            this.txtDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtDate.Location = new System.Drawing.Point(72, 50);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(100, 20);
-            this.txtDate.TabIndex = 23;
-            // 
-            // txtAcc
-            // 
-            this.txtAcc.FormattingEnabled = true;
-            this.txtAcc.Location = new System.Drawing.Point(72, 100);
-            this.txtAcc.Name = "txtAcc";
-            this.txtAcc.Size = new System.Drawing.Size(100, 21);
-            this.txtAcc.Sorted = true;
-            this.txtAcc.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(213, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "ID :";
-            // 
-            // txtTid
-            // 
-            this.txtTid.Location = new System.Drawing.Point(241, 50);
-            this.txtTid.Name = "txtTid";
-            this.txtTid.ReadOnly = true;
-            this.txtTid.Size = new System.Drawing.Size(100, 20);
-            this.txtTid.TabIndex = 25;
             // 
             // crtBill
             // 
