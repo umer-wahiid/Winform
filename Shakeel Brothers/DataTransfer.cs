@@ -26,5 +26,9 @@ namespace Shakeel_Brothers
         public static string t;
         public static string un;
         public static string up;
+
+
+        public static string user;
+        public static string role;
     }
 }

@@ -34,6 +34,12 @@ namespace Shakeel_Brothers
             SqlCommand cmd = new SqlCommand("Select * from tblCashier where Cashier=@c and Password=@p",c.con);
             cmd.Parameters.AddWithValue("@c",textBox1.Text);
             cmd.Parameters.AddWithValue("@p", textBox2.Text);
+            SqlCommand cmdd = new SqlCommand("select Role from tblCashier where Cashier = '" + textBox1.Text + "'", c.con);
+            c.con.Open();
+            SqlDataReader drr = cmd.ExecuteReader();
+            drr.Read();
+            int ids = drr.GetInt32(0);
+            c.con.Close();
             c.con.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -42,6 +48,10 @@ namespace Shakeel_Brothers
                 {
                     if (dr["Role"].ToString() == "admin")
                     {
+                        DataTransfer.role += ids;
+                        DataTransfer.user = textBox1.Text;
+
+
                         Startup s = new Startup();
                         s.Show();
                         this.Hide();

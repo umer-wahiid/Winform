@@ -80,7 +80,7 @@ namespace Shakeel_Brothers
             dr.Read();
             int ids = dr.GetInt32(0);
             c.con.Close();
-            txtTid.Text += ids;
+            txtTid.Text += ids+1;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -111,10 +111,11 @@ namespace Shakeel_Brothers
                     MessageBox.Show("Please Select Customer !!");
                 }
             }
+
             if (txtCustomer.Text != "" && txtDate.Text != "" && txtAmount.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("insert into tblTransactions(TDate,TTime,BillNum,Supplier,Description)values(@d,@t,@b,@s,@ds)", c.con);
-                SqlCommand cmdd = new SqlCommand("insert into tblTransDetails(TID,DDate,DTime,Total)values(@tid,@d,@t,@tt)", c.con);
+                SqlCommand cmdd = new SqlCommand("insert into tblTransDetails(TID,DDate,DTime,[User],Total)values(@tid,@d,@t,@user,@tt)", c.con);
                 SqlCommand cm = new SqlCommand("select Id from tblSupplier where Supplier = '" + txtCustomer.Text + "'", c.con);
                 c.con.Open();
                 SqlDataReader dr = cm.ExecuteReader();
@@ -128,8 +129,13 @@ namespace Shakeel_Brothers
                     cmd.Parameters.AddWithValue("@t", DateTime.Now.ToString("H:mm tt"));
                     cmd.Parameters.AddWithValue("@b", txtOrder.Text);
                     cmd.Parameters.AddWithValue("@ds", txtAcc.Text);
-                    cmd.Parameters.AddWithValue("@tid", txtTid.Text);
-                    cmd.Parameters.AddWithValue("@tt", txtAmount.Text);
+                    cmdd.Parameters.AddWithValue("@d", txtDate.Value);
+                    cmdd.Parameters.AddWithValue("@t", DateTime.Now.ToString("H:mm tt"));
+                    cmdd.Parameters.AddWithValue("@b", txtOrder.Text);
+                    cmdd.Parameters.AddWithValue("@ds", txtAcc.Text);
+                    cmdd.Parameters.AddWithValue("@tid", txtTid.Text);
+                    cmdd.Parameters.AddWithValue("@tt", txtAmount.Text);
+                    cmdd.Parameters.AddWithValue("@user", DataTransfer.role);
                     c.IUD(cmd);
                     c.IUD(cmdd);
                     clr();
