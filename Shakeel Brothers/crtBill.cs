@@ -107,7 +107,7 @@ namespace Shakeel_Brothers
         {
             if (txtCustomer.Text != "" && txtDate.Text != "" && txtAmount.Text == "")
             {
-                SqlCommand cmd = new SqlCommand("insert into tblTransactions(TDate,TTime,BillNum,Supplier,Description)values(@d,@t,@b,@s,@ds)", c.con);
+                SqlCommand cmd = new SqlCommand("insert into tblTransactions(TID,TDate,TTime,BillNum,Supplier,Description)values(@tid,@d,@t,@b,@s,@ds)", c.con);
                 SqlCommand cm = new SqlCommand("select Id from tblSupplier where Supplier = '" + txtCustomer.Text + "'", c.con);
                 c.con.Open();
                 SqlDataReader dr = cm.ExecuteReader();
@@ -117,6 +117,7 @@ namespace Shakeel_Brothers
 
                     cmd.Parameters.AddWithValue("@s", ids);
                     c.con.Close();
+                    cmd.Parameters.AddWithValue("@tid", txtTid.Text);
                     cmd.Parameters.AddWithValue("@d", txtDate.Value);
                     cmd.Parameters.AddWithValue("@t", DateTime.Now.ToString("H:mm tt"));
                     cmd.Parameters.AddWithValue("@b", txtOrder.Text);
@@ -141,7 +142,7 @@ namespace Shakeel_Brothers
 
             else if (txtCustomer.Text != "" && txtDate.Text != "" && txtAmount.Text != "")
             {
-                SqlCommand cmd = new SqlCommand("insert into tblTransactions(TDate,TTime,BillNum,Supplier,Description)values(@d,@t,@b,@s,@ds)", c.con);
+                SqlCommand cmd = new SqlCommand("insert into tblTransactions(TID,TDate,TTime,BillNum,Supplier,Description)values(@tid,@d,@t,@b,@s,@ds)", c.con);
                 SqlCommand cmdd = new SqlCommand("insert into tblTransDetails(TID,DDate,DTime,[User],Total)values(@tid,@d,@t,@user,@tt)", c.con);
                 SqlCommand cm = new SqlCommand("select Id from tblSupplier where Supplier = '" + txtCustomer.Text + "'", c.con);
                 c.con.Open();
@@ -156,13 +157,14 @@ namespace Shakeel_Brothers
                     cmd.Parameters.AddWithValue("@t", DateTime.Now.ToString("H:mm tt"));
                     cmd.Parameters.AddWithValue("@b", txtOrder.Text);
                     cmd.Parameters.AddWithValue("@ds", txtAcc.Text);
+                    cmd.Parameters.AddWithValue("@tid", txtTid.Text);
                     cmdd.Parameters.AddWithValue("@d", txtDate.Value);
                     cmdd.Parameters.AddWithValue("@t", DateTime.Now.ToString("H:mm tt"));
                     cmdd.Parameters.AddWithValue("@b", txtOrder.Text);
                     cmdd.Parameters.AddWithValue("@ds", txtAcc.Text);
                     cmdd.Parameters.AddWithValue("@tid", txtTid.Text);
                     cmdd.Parameters.AddWithValue("@tt", txtAmount.Text);
-                    cmdd.Parameters.AddWithValue("@user", DataTransfer.role);
+                    cmdd.Parameters.AddWithValue("@user", DataTransfer.user);
                     c.IUD(cmd);
                     c.IUD(cmdd);
                     clr();

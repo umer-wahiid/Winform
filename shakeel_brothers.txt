@@ -28,7 +28,7 @@ CREATE TABLE [tblSupplier](
 )
 
 CREATE TABLE [tblTransactions](
-	[TID] [int] Primary Key IDENTITY(1,1) NOT NULL,
+	[TID] [int] Primary Key NOT NULL,
 	[TDate] DateTime Not NULL,
 	[TTime] Time NULL,
 	[BillNum] [nvarchar] (30) NULL,
