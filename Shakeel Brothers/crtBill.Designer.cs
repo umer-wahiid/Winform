@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTid = new System.Windows.Forms.TextBox();
-            this.txtAcc = new System.Windows.Forms.ComboBox();
             this.txtDate = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -43,14 +42,15 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtOrder = new System.Windows.Forms.TextBox();
+            this.txtAcc = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtAcc);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtTid);
-            this.panel1.Controls.Add(this.txtAcc);
             this.panel1.Controls.Add(this.txtDate);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label13);
@@ -64,7 +64,7 @@
             this.panel1.Controls.Add(this.txtOrder);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(496, 233);
             this.panel1.TabIndex = 22;
@@ -82,27 +82,17 @@
             // txtTid
             // 
             this.txtTid.Location = new System.Drawing.Point(321, 62);
-            this.txtTid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTid.Margin = new System.Windows.Forms.Padding(4);
             this.txtTid.Name = "txtTid";
             this.txtTid.ReadOnly = true;
             this.txtTid.Size = new System.Drawing.Size(132, 22);
             this.txtTid.TabIndex = 25;
             // 
-            // txtAcc
-            // 
-            this.txtAcc.FormattingEnabled = true;
-            this.txtAcc.Location = new System.Drawing.Point(96, 123);
-            this.txtAcc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtAcc.Name = "txtAcc";
-            this.txtAcc.Size = new System.Drawing.Size(132, 24);
-            this.txtAcc.Sorted = true;
-            this.txtAcc.TabIndex = 4;
-            // 
             // txtDate
             // 
             this.txtDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtDate.Location = new System.Drawing.Point(96, 62);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(132, 22);
             this.txtDate.TabIndex = 2;
@@ -131,7 +121,7 @@
             // txtAmount
             // 
             this.txtAmount.Location = new System.Drawing.Point(321, 30);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(132, 22);
             this.txtAmount.TabIndex = 5;
@@ -141,7 +131,7 @@
             // 
             this.txtCustomer.FormattingEnabled = true;
             this.txtCustomer.Location = new System.Drawing.Point(96, 92);
-            this.txtCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(132, 24);
             this.txtCustomer.Sorted = true;
@@ -151,7 +141,7 @@
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSave.Location = new System.Drawing.Point(149, 172);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(305, 37);
             this.btnSave.TabIndex = 6;
@@ -163,7 +153,7 @@
             // 
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.Location = new System.Drawing.Point(29, 172);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 37);
             this.btnBack.TabIndex = 7;
@@ -205,10 +195,20 @@
             // txtOrder
             // 
             this.txtOrder.Location = new System.Drawing.Point(96, 27);
-            this.txtOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOrder.Margin = new System.Windows.Forms.Padding(4);
             this.txtOrder.Name = "txtOrder";
             this.txtOrder.Size = new System.Drawing.Size(132, 22);
             this.txtOrder.TabIndex = 1;
+            // 
+            // txtAcc
+            // 
+            this.txtAcc.FormattingEnabled = true;
+            this.txtAcc.Location = new System.Drawing.Point(96, 128);
+            this.txtAcc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAcc.Name = "txtAcc";
+            this.txtAcc.Size = new System.Drawing.Size(132, 24);
+            this.txtAcc.Sorted = true;
+            this.txtAcc.TabIndex = 4;
             // 
             // crtBill
             // 
@@ -218,7 +218,7 @@
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(496, 233);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "crtBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "crtBill";

@@ -38,7 +38,7 @@ namespace Shakeel_Brothers
             c.con.Open();
             SqlDataReader drr = cmd.ExecuteReader();
             drr.Read();
-            int ids = drr.GetInt32(0);
+            string ids = drr.GetString(3);
             c.con.Close();
             c.con.Open();
             SqlDataReader dr = cmd.ExecuteReader();
@@ -46,20 +46,20 @@ namespace Shakeel_Brothers
             {
                 while (dr.Read())
                 {
-                    if (dr["Role"].ToString() == "admin")
-                    {
-                        DataTransfer.role += ids;
+                    //if (dr["Role"].ToString() == "admin")
+                    //{
+                        DataTransfer.role = ids;
                         DataTransfer.user = textBox1.Text;
 
 
                         Startup s = new Startup();
                         s.Show();
                         this.Hide();
-                    }
-                    else
-                    {
-                        this.Close();
-                    }
+                    //}
+                    //else
+                    //{
+                    //    this.Close();
+                    //}
                 }
             }
             else

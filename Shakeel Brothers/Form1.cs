@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,60 @@ namespace Shakeel_Brothers
 {
     public partial class Startup : Form
     {
+        Class1 c = new Class1();
+        public void getCus()
+        {
+            SqlCommand cmd = new SqlCommand("select Supplier from tblSupplier", c.con);
+            c.con.Open();
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string customer = dr.GetString(0);
+                coll.Add(customer);
+                CustomerDropdown.Items.Add(customer);
+            }
+            CustomerDropdown.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            CustomerDropdown.AutoCompleteMode = AutoCompleteMode.Append;
+            CustomerDropdown.AutoCompleteCustomSource = coll;
+            c.con.Close();
+        }
+        
+        public void getitems()
+        {
+            SqlCommand cmd = new SqlCommand("select RawName from tblRawMaterial", c.con);
+            c.con.Open();
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string customer = dr.GetString(0);
+                coll.Add(customer);
+                ItemsDropdown.Items.Add(customer);
+            }
+            ItemsDropdown.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            ItemsDropdown.AutoCompleteMode = AutoCompleteMode.Append;
+            ItemsDropdown.AutoCompleteCustomSource = coll;
+            c.con.Close();
+        }
+        
+        public void getCities()
+        {
+            SqlCommand cmd = new SqlCommand("select City from tblCity", c.con);
+            c.con.Open();
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string customer = dr.GetString(0);
+                coll.Add(customer);
+                CityDropdown.Items.Add(customer);
+            }
+            CityDropdown.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            CityDropdown.AutoCompleteMode = AutoCompleteMode.Append;
+            CityDropdown.AutoCompleteCustomSource = coll;
+            c.con.Close();
+        }
         public Startup()
         {
             InitializeComponent();
@@ -19,7 +74,14 @@ namespace Shakeel_Brothers
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (DataTransfer.role != "admin")
+            {
+                users.Hide();
+            }
 
+            getitems();
+            getCus();
+            getCities();
         }
 
 
@@ -148,6 +210,13 @@ namespace Shakeel_Brothers
         {
             Item t = new Item();
             t.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Login c = new Login();
+            c.Close();
+            this.Close();
         }
     }
 }
