@@ -124,18 +124,22 @@ namespace Shakeel_Brothers
                     c.IUD(cmd);
                     clr();
                     txtOrder.Focus();
-                    txtid();
                     getAcc();
                     getitems();
+                    txtid();
                 }
                 else
                 {
                     c.con.Close();
                     MessageBox.Show("Please Select Customer !!");
+                    txtOrder.Focus();
+                    getAcc();
+                    txtid();
+                    getitems();
                 }
             }
 
-            if (txtCustomer.Text != "" && txtDate.Text != "" && txtAmount.Text != "")
+            else if (txtCustomer.Text != "" && txtDate.Text != "" && txtAmount.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("insert into tblTransactions(TDate,TTime,BillNum,Supplier,Description)values(@d,@t,@b,@s,@ds)", c.con);
                 SqlCommand cmdd = new SqlCommand("insert into tblTransDetails(TID,DDate,DTime,[User],Total)values(@tid,@d,@t,@user,@tt)", c.con);
@@ -171,6 +175,10 @@ namespace Shakeel_Brothers
                 {
                     c.con.Close();
                     MessageBox.Show("Please Select Customer !!");
+                    txtOrder.Focus();
+                    txtid();
+                    getAcc();
+                    getitems();
                 }
             }
             else
