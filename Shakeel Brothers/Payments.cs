@@ -16,7 +16,7 @@ namespace Shakeel_Brothers
         Class1 c = new Class1();
         public void showgrid()
         {
-            dataGridView1.DataSource = c.GetData("select tblTransactions.TID as 'ID',tblTransactions.TDate as 'Date',tblSupplier.Supplier,tblTransactions.Debit,tblTransactions.Description from tblTransactions where tblTransactions.Supplier = 2 INNER JOIN tblSupplier ON tblTransactions.TID = tblSupplier.Id");
+            dataGridView1.DataSource = c.GetData("select tblTransactions.TID as 'ID',tblTransactions.TDate as 'Date',tblSupplier.Supplier,tblTransactions.Debit,tblTransactions.Description from tblTransactions  INNER JOIN tblSupplier ON tblTransactions.Supplier = tblSupplier.Id where tblTransactions.Supplier = " + DataTransfer.cusId + "");
         }
         public Payments()
         {

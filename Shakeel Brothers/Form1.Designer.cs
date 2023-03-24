@@ -377,12 +377,6 @@
             this.CustomerDropdown.FormattingEnabled = true;
             this.CustomerDropdown.IntegralHeight = false;
             this.CustomerDropdown.ItemHeight = 25;
-            this.CustomerDropdown.Items.AddRange(new object[] {
-            "Yousuf Ayub",
-            "Faizullah",
-            "Asim Pan Masala",
-            "Noor & Co.",
-            "Zahoor & Co."});
             this.CustomerDropdown.Location = new System.Drawing.Point(92, 294);
             this.CustomerDropdown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerDropdown.Name = "CustomerDropdown";

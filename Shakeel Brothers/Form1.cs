@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Shakeel_Brothers
 {
@@ -282,6 +283,21 @@ namespace Shakeel_Brothers
         private void CustomerDropdown_TextChanged(object sender, EventArgs e)
         {
             DataTransfer.cus = CustomerDropdown.Text;
+            SqlCommand cm = new SqlCommand("select Id from tblSupplier where Supplier = '" + CustomerDropdown.Text + "'", c.con);
+            c.con.Open();
+            SqlDataReader dr = cm.ExecuteReader();
+            //dr.Read();
+            if (dr.Read())
+            {
+                int ids = dr.GetInt32(0);
+                DataTransfer.cusId = ids;
+                textBox2.Text = Convert.ToString(ids);
+                c.con.Close();
+            }
+            else
+            {
+                c.con.Close();
+            }
         }
     }
 }

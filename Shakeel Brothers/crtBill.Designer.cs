@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtAcc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTid = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.DateTimePicker();
@@ -42,7 +43,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtOrder = new System.Windows.Forms.TextBox();
-            this.txtAcc = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(496, 233);
             this.panel1.TabIndex = 22;
+            // 
+            // txtAcc
+            // 
+            this.txtAcc.FormattingEnabled = true;
+            this.txtAcc.Location = new System.Drawing.Point(96, 128);
+            this.txtAcc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAcc.Name = "txtAcc";
+            this.txtAcc.Size = new System.Drawing.Size(132, 24);
+            this.txtAcc.Sorted = true;
+            this.txtAcc.TabIndex = 4;
             // 
             // label1
             // 
@@ -96,6 +106,7 @@
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(132, 22);
             this.txtDate.TabIndex = 2;
+            this.txtDate.Value = new System.DateTime(2023, 3, 24, 23, 18, 10, 0);
             // 
             // label12
             // 
@@ -199,16 +210,6 @@
             this.txtOrder.Name = "txtOrder";
             this.txtOrder.Size = new System.Drawing.Size(132, 22);
             this.txtOrder.TabIndex = 1;
-            // 
-            // txtAcc
-            // 
-            this.txtAcc.FormattingEnabled = true;
-            this.txtAcc.Location = new System.Drawing.Point(96, 128);
-            this.txtAcc.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAcc.Name = "txtAcc";
-            this.txtAcc.Size = new System.Drawing.Size(132, 24);
-            this.txtAcc.Sorted = true;
-            this.txtAcc.TabIndex = 4;
             // 
             // crtBill
             // 

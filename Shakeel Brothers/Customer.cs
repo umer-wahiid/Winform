@@ -79,7 +79,7 @@ namespace Shakeel_Brothers
                 SqlDataReader dr = cm.ExecuteReader();
                 //dr.Read();
                 if (dr.Read()) { 
-                int ids = dr.GetInt32(0);
+                    int ids = dr.GetInt32(0);
                     cmd.Parameters.AddWithValue("@c", ids);
                     c.con.Close();
                     cmd.Parameters.AddWithValue("@n", txtName.Text);
