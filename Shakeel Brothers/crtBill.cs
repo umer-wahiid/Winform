@@ -44,6 +44,7 @@ namespace Shakeel_Brothers
             while (dr.Read())
             {
                 string acc = dr.GetString(0);
+                coll.Add(acc);
                 txtAcc.Items.Add(acc);
             }
             txtAcc.AutoCompleteSource = AutoCompleteSource.CustomSource;

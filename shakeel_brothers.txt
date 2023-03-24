@@ -29,7 +29,7 @@ CREATE TABLE [tblSupplier](
 
 CREATE TABLE [tblTransactions](
 	[TID] [int] Primary Key NOT NULL,
-	[TDate] DateTime Not NULL,
+	[TDate] Date Not NULL,
 	[TTime] Time NULL,
 	[BillNum] [nvarchar] (30) NULL,
 	[Supplier] int FOREIGN KEY REFERENCES tblSupplier(Id),

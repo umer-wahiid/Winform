@@ -13,6 +13,7 @@ namespace Shakeel_Brothers
         public static string c;
         public static string cp;
         public static string d;
+        public static string db;
         public static string ds;
         public static string e;
         public static string f;
