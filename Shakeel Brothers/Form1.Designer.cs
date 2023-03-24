@@ -388,6 +388,8 @@
             this.CustomerDropdown.Name = "CustomerDropdown";
             this.CustomerDropdown.Size = new System.Drawing.Size(224, 33);
             this.CustomerDropdown.TabIndex = 9;
+            this.CustomerDropdown.TextChanged += new System.EventHandler(this.CustomerDropdown_TextChanged);
+            this.CustomerDropdown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerDropdown_KeyPress);
             // 
             // PayByCus
             // 
@@ -520,6 +522,7 @@
             this.ItemsDropdown.Size = new System.Drawing.Size(167, 28);
             this.ItemsDropdown.TabIndex = 12;
             this.ItemsDropdown.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.ItemsDropdown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ItemsDropdown_KeyPress);
             // 
             // CompLedger
             // 
@@ -614,6 +617,7 @@
             this.CityDropdown.Name = "CityDropdown";
             this.CityDropdown.Size = new System.Drawing.Size(167, 28);
             this.CityDropdown.TabIndex = 16;
+            this.CityDropdown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CityDropdown_KeyPress);
             // 
             // textBox5
             // 

@@ -71,3 +71,4 @@ C:\Users\umerw\GitHub\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.crtBil
 C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.crtBill.resources
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.crtBill.resources
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Customer.resources
+D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Payments.resources

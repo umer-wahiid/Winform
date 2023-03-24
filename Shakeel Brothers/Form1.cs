@@ -162,7 +162,8 @@ namespace Shakeel_Brothers
 
         private void Payments_Click(object sender, EventArgs e)
         {
-
+            Payments p = new Payments();
+            p.Show();
         }
 
         private void DelEntryView_Click(object sender, EventArgs e)
@@ -217,6 +218,70 @@ namespace Shakeel_Brothers
             Login c = new Login();
             c.Close();
             this.Close();
+        }
+
+        private void ItemsDropdown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (Char.IsLetter(ch))
+            {
+                e.Handled = false;
+            }
+            else if (ch == 8)
+            {
+                e.Handled=false;
+            }
+            else if (ch == 32)
+            {
+                e.Handled=false;
+            }
+            else
+            {
+                e.Handled=true;
+            }            
+        }
+
+        private void CustomerDropdown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (Char.IsLetter(ch))
+            {
+                e.Handled = false;
+            }
+            else if (ch == 8)
+            {
+                e.Handled=false;
+            }
+            else if (ch == 32)
+            {
+                e.Handled=false;
+            }
+            else
+            {
+                e.Handled=true;
+            }      
+        }
+
+        private void CityDropdown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (Char.IsLetter(ch))
+            {
+                e.Handled = false;
+            }
+            else if (ch == 8)
+            {
+                e.Handled=false;
+            }
+            else
+            {
+                e.Handled=true;
+            }
+        }
+
+        private void CustomerDropdown_TextChanged(object sender, EventArgs e)
+        {
+            DataTransfer.cus = CustomerDropdown.Text;
         }
     }
 }

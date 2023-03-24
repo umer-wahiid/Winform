@@ -28,6 +28,10 @@ namespace Shakeel_Brothers
         public static string up;
 
 
+
+        public static string cus;
+
+
         public static string user;
         public static string role;
     }
