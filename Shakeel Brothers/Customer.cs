@@ -71,42 +71,52 @@ namespace Shakeel_Brothers
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != "" && txtUname.Text != "")
-            {
-                SqlCommand cmd = new SqlCommand("insert into tblSupplier(Supplier,Usupplier,ContactPerson,Address,Ph,Fax,Email,City,Limit)values(@n,@un,@cp,@a,@p,@f,@e,@c,@l)", c.con);
-                SqlCommand cm = new SqlCommand("select ID from tblCity where City = '" + txtCity.Text + "'", c.con);
-                c.con.Open();
-                SqlDataReader dr = cm.ExecuteReader();
-                //dr.Read();
-                if (dr.Read()) { 
-                    int ids = dr.GetInt32(0);
-                    cmd.Parameters.AddWithValue("@c", ids);
-                    c.con.Close();
-                    cmd.Parameters.AddWithValue("@n", txtName.Text);
-                    cmd.Parameters.AddWithValue("@un", txtUname.Text);
-                    cmd.Parameters.AddWithValue("@cp", txtContact.Text);
-                    cmd.Parameters.AddWithValue("@a", txtAddress.Text);
-                    cmd.Parameters.AddWithValue("@p", txtPhone.Text);
-                    cmd.Parameters.AddWithValue("@f", txtFax.Text);
-                    cmd.Parameters.AddWithValue("@e", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@l", txtLimit.Text);
-                    c.IUD(cmd);
-                    clr();
-                    showgrid();
-                    txtName.Focus();
+            try { 
+                if (txtName.Text != "" && txtUname.Text != "")
+                {
+                    SqlCommand cmd = new SqlCommand("insert into tblSupplier(Supplier,Usupplier,ContactPerson,Address,Ph,Fax,Email,City,Limit)values(@n,@un,@cp,@a,@p,@f,@e,@c,@l)", c.con);
+                    SqlCommand cm = new SqlCommand("select ID from tblCity where City = '" + txtCity.Text + "'", c.con);
+                    c.con.Open();
+                    SqlDataReader dr = cm.ExecuteReader();
+                    //dr.Read();
+                    if (dr.Read())
+                    {
+                        int ids = dr.GetInt32(0);
+                        cmd.Parameters.AddWithValue("@c", ids);
+                        c.con.Close();
+                        cmd.Parameters.AddWithValue("@n", txtName.Text);
+                        cmd.Parameters.AddWithValue("@un", txtUname.Text);
+                        cmd.Parameters.AddWithValue("@cp", txtContact.Text);
+                        cmd.Parameters.AddWithValue("@a", txtAddress.Text);
+                        cmd.Parameters.AddWithValue("@p", txtPhone.Text);
+                        cmd.Parameters.AddWithValue("@f", txtFax.Text);
+                        cmd.Parameters.AddWithValue("@e", txtEmail.Text);
+                        cmd.Parameters.AddWithValue("@l", txtLimit.Text);
+                        c.IUD(cmd);
+                        clr();
+                        showgrid();
+                        txtName.Focus();
+                    }
+                    else
+                    {
+                        c.con.Close();
+                        MessageBox.Show("Please Select City !!");
+                    }
                 }
                 else
                 {
-                    c.con.Close();
-                    MessageBox.Show("Please Select City !!");
+                    MessageBox.Show("Please Insert Data to Save !!");
                 }
             }
-            else
+            catch (System.Data.SqlClient.SqlException ex)
             {
-                MessageBox.Show("Please Insert Data to Save !!");
+                    clr();
+                    txtName.Focus();
+                    MessageBox.Show("Name Should Be Unique !!");
             }
         }
 
+        //System.Data.SqlClient.SqlException
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataTransfer.i = dataGridView2.CurrentRow.Cells[0].Value.ToString();

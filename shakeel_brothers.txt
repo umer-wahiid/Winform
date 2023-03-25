@@ -3,20 +3,24 @@ USE [shakeel_brothers]
 
 CREATE TABLE [tblCity](
 	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
-	[City] [nvarchar] (25) Not NULL,
+	[City] [nvarchar] (25) UNIQUE Not NULL,
 	[UCity] [nvarchar] (30) NOT NULL,
 )
+insert into tblCity (City,UCity)Values('Lahore','لاہور')
+insert into tblCity (City,UCity)Values('Karachi','کراچی')
+insert into tblCity (City,UCity)Values('Multan','ملتان')
+
 
 CREATE TABLE [tblArea](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Area] [nvarchar] (35) NOT NULL,
+	[Area] [nvarchar] (35) UNIQUE NOT NULL,
 	[UArea] [nvarchar] (30) NOT NULL,
 	[CityId] int FOREIGN KEY REFERENCES tblCity(ID),
 )
 
 CREATE TABLE [tblSupplier](
 	[Id] [int] Primary Key IDENTITY(1,1) NOT NULL,
-	[Supplier] [nvarchar] (25) Not NULL,
+	[Supplier] [nvarchar] (25) UNIQUE Not NULL,
 	[USupplier] [nvarchar] (30) NOT NULL,
 	[ContactPerson] [nvarchar] (30) NULL,
 	[Address] [nvarchar] (30) NULL,
@@ -26,6 +30,11 @@ CREATE TABLE [tblSupplier](
 	[City] int FOREIGN KEY REFERENCES tblCity(ID),
 	[Limit] [bigint] NULL,
 )
+insert into tblSupplier (Supplier,USupplier,ContactPerson,City)Values('Noor & Co.','نوراینڈکمپنی','213456452',1)
+insert into tblSupplier (Supplier,USupplier,ContactPerson,City)Values('Zahoor & Co.','زہوراینڈکمپنی','213456452',1)
+insert into tblSupplier (Supplier,USupplier,ContactPerson,City)Values('Faizullah KHI','فیضاللہ کراچی	','213456452',2)
+
+
 
 CREATE TABLE [tblTransactions](
 	[TID] [int] Primary Key NOT NULL,
@@ -41,7 +50,7 @@ CREATE TABLE [tblTransactions](
 
 CREATE TABLE [tblRawMaterial](
 	[Id] [int] Primary Key IDENTITY(1,1) NOT NULL,
-	[RawName] [nvarchar] (40) NOT NULL,
+	[RawName] [nvarchar] (40) UNIQUE NOT NULL,
 	[URawName] [nvarchar] (40) NOT NULL,
 	[Packing] [nvarchar] (25)  NULL,
 	[UPacking] [nvarchar] (25) NULL,
@@ -54,7 +63,7 @@ insert into tblRawMaterial(RawName,URawName)values('Balance','بیلنس')
 
 CREATE TABLE [tblTransport](
 	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
-	[Transport] [nvarchar] (30) Not Null,
+	[Transport] [nvarchar] (30) UNIQUE Not Null,
 	[UTransport] [nvarchar] (30) Not Null,
 	[Tport Ph] [nvarchar] (15) Null,
 )
@@ -83,22 +92,23 @@ CREATE TABLE [tblTransDetails](
 
 CREATE TABLE [tblCashier](
 	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
-	[Cashier] [nvarchar] (30)  Not Null,
+	[Cashier] [nvarchar] (30) UNIQUE Not Null,
 	[Password] [nvarchar] (30)  Not Null,
 	[Role] [nvarchar] (30)  Not Null,
 )
 insert into tblCashier(Cashier,Password,Role)values('umer','123','admin')
+insert into tblCashier(Cashier,Password,Role)values('bilal','123','cashier')
 
 
 CREATE TABLE [tblPacking](
 	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
-	[Packing] [nvarchar] (30)  Not Null,
+	[Packing] [nvarchar] (30) UNIQUE Not Null,
 )
 
 
 CREATE TABLE [tblReceiver](
 	[ID] [int] Primary Key IDENTITY(1,1) NOT NULL,
-	[Receiver] [nvarchar] (30)  Not Null,
+	[Receiver] [nvarchar] (30) UNIQUE Not Null,
 )
 
 
