@@ -98,8 +98,9 @@ namespace Shakeel_Brothers
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-        }
+            Bills b = new Bills();
+            b.Show()
+;        }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {

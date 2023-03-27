@@ -56,7 +56,7 @@ namespace Shakeel_Brothers
         public void clr()
         {
             txtTid.Text = "";
-            txtOrder.Text = "";
+            txtOrder.Text = "0";
             txtCustomer.Text = "";
             txtDate.Text = "";
             txtAcc.Text = "";
