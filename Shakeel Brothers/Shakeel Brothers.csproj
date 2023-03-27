@@ -99,6 +99,12 @@
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="DataTransfer.cs" />
+    <Compile Include="EditBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditBill.Designer.cs">
+      <DependentUpon>EditBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditBill.resx">
+      <DependentUpon>EditBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

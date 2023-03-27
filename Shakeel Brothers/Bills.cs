@@ -27,7 +27,13 @@ namespace Shakeel_Brothers
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            EditBill eb = new EditBill();
+            eb.Show();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

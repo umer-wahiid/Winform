@@ -74,3 +74,4 @@ D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Customer.res
 D:\xampp\htdocs\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Payments.resources
 C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Payments.resources
 C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.Bills.resources
+C:\Users\HP\source\repos\Winform\Shakeel Brothers\obj\Debug\Shakeel_Brothers.EditBill.resources
