@@ -27,6 +27,7 @@ namespace Shakeel_Brothers
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataTransfer.BillId = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             EditBill eb = new EditBill();
             eb.Show();
         }

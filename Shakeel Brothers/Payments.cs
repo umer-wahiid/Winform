@@ -146,7 +146,7 @@ namespace Shakeel_Brothers
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataTransfer.id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            DataTransfer.id = dataGridView1.CurrentRow.Cells[0].Value.ToString();   
             DataTransfer.d = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             DataTransfer.db = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             DataTransfer.ds = dataGridView1.CurrentRow.Cells[4].Value.ToString();

@@ -113,3 +113,15 @@ CREATE TABLE [tblReceiver](
 
 
 
+
+
+
+
+
+
+
+select tblTransDetails.TID as 'ID',tblTransDetails.DDate as 'Date',tblTransDetails.RawMaterial as 'آٰیٹم کانام',
+                tblTransDetails.Nag,tblRawMaterial.Packing as 'پیکنگ',tblTransDetails.Qty as 'مقدار',tblTransDetails.Rate as 'ریٹ',tblTransDetails.Bilty,
+                tblTransDetails.Transport as 'ٹرانسپورٹ',tblTransDetails.Labour as 'مزدوری',tblTransDetails.Bardan as 'باردان',tblTransDetails.Total as 'رقم'
+                 from tblTransDetails  INNER JOIN tblRawMaterial ON tblTransDetails.RawMaterial = tblRawMaterial.Id where tblTransDetails.TID = 14
+

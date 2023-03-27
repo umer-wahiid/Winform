@@ -51,7 +51,7 @@ namespace Shakeel_Brothers
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            if (txtTransport.Text != "" && txtUtransport.Text != "" && txtPhone.Text != "" && txtId.Text == "")
+            if (txtTransport.Text != "" && txtUtransport.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("insert into tblTransport(Transport,UTransport,[Tport Ph])values(@c,@p,@r)", c.con);
                 cmd.Parameters.AddWithValue("@c", txtTransport.Text);
@@ -71,7 +71,7 @@ namespace Shakeel_Brothers
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtTransport.Text != "" && txtUtransport.Text != "" && txtPhone.Text != "")
+            if (txtTransport.Text != "" && txtUtransport.Text != "" && txtId.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("update tblTransport set Transport=@c ,UTransport=@p,[Tport Ph]=@r where ID=@i", c.con);
                 cmd.Parameters.AddWithValue("@i", txtId.Text);

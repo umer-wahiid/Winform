@@ -35,6 +35,9 @@ namespace Shakeel_Brothers
         public static int cusId;
 
 
+        public static string BillId;
+
+
         public static string user;
         public static string role;
     }
