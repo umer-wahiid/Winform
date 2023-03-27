@@ -76,23 +76,7 @@ namespace Shakeel_Brothers
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtDate.Text != "" && txtAmount.Text != "" && txtAcc.Text != "")
-            {
-                SqlCommand cmd = new SqlCommand("insert into tblTransactions(TID,TDate,Supplier,Debit,Description)values(@tid,@d," + DataTransfer.cusId + ",@db,@ds)", c.con);
-                cmd.Parameters.AddWithValue("@tid", txtID.Text);
-                cmd.Parameters.AddWithValue("@d", Convert.ToDateTime(txtDate.Text));
-                cmd.Parameters.AddWithValue("@db", txtAmount.Text);
-                cmd.Parameters.AddWithValue("@ds", txtAcc.Text);
-                c.IUD(cmd);
-                clr();
-                showgrid();
-                getAcc();
-                txtDate.Focus();
-            }
-            else
-            {
-                MessageBox.Show("Please Insert Data to Save !!");
-            }
+
         }
     }
 }
