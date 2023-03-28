@@ -77,6 +77,17 @@ namespace Shakeel_Brothers
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+<<<<<<< HEAD
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+=======
+>>>>>>> parent of c5cc5c9 (Edit Bill In Progress)
         }
     }
 }
